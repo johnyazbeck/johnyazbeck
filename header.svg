@@ -214,6 +214,7 @@
         .tech-tag.yellow { background: #f2c94c; color: #0d1117; border-color: #f2c94c; }
         .tech-tag.green { background: #2ea043; color: #0d1117; border-color: #2ea043; }
         .tech-tag.gray { background: #212936; color: #e6edf3; border-color: #485260; }
+        .tech-tag.purple { background: #7c5cff; color: #0d1117; border-color: #7c5cff; }
 
         .footer-block {
           margin-top: 30px;
@@ -471,6 +472,26 @@
                   <div class="timeline-desc">Analytical thinking and problem-solving foundation.</div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- ========================================================= -->
+          <!-- INTERESTS & BEYOND -->
+          <!-- ========================================================= -->
+          <div class="content-block" style="margin-top: 20px; padding-top: 20px;">
+            <div class="section-header" style="margin-bottom: 20px;">
+              <div class="section-dot" style="background-color: #7c5cff;"></div>
+              <h2 class="section-title" style="font-size: 30px;">Interests &amp; Beyond</h2>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; padding: 0 4px;">
+              <div class="tech-tag purple">💻 Coding</div>
+              <div class="tech-tag yellow">⛓️ Blockchain &amp; Crypto</div>
+              <div class="tech-tag accent">🔒 Data Security</div>
+              <div class="tech-tag blue">📚 Reading</div>
+              <div class="tech-tag green">💪 Fitness</div>
+              <div class="tech-tag primary">🎸 Guitar</div>
+              <div class="tech-tag" style="background: #e83e8c; color: #0d1117; border-color: #e83e8c;">🥾 Hiking</div>
             </div>
           </div>
 
