@@ -1,199 +1,495 @@
-```markdown
-<!--
-### Hi there, I'm John Yazbeck 👋
--->
+<svg fill="none" viewBox="0 0 1200 2800" width="1200" height="2800" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=500&color=E32636&center=true&vCenter=true&width=600&lines=Software+Engineer;Full-Stack+Developer;CTF+Enthusiast;Problem+Solver" alt="Typing SVG" />
-</div>
+        .wrapper {
+          width: 1200px;
+          height: 2800px;
+          background-color: #0d1117;
+          background-image: 
+            linear-gradient(90deg, #1a1f2e 1px, transparent 1px),
+            linear-gradient(180deg, #1a1f2e 1px, transparent 1px);
+          background-size: 40px 40px;
+          background-position: -1px -1px;
+          position: relative;
+          font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+          color: #e6edf3;
+          overflow: hidden;
+          border: 4px solid #e32636;
+        }
 
-<br/>
+        .mark { position: absolute; width: 24px; height: 24px; z-index: 20; }
+        .m-tl { top: 16px; left: 16px; border-top: 3px solid #e32636; border-left: 3px solid #e32636; }
+        .m-tr { top: 16px; right: 16px; border-top: 3px solid #e32636; border-right: 3px solid #e32636; }
+        .m-bl { bottom: 16px; left: 16px; border-bottom: 3px solid #e32636; border-left: 3px solid #e32636; }
+        .m-br { bottom: 16px; right: 16px; border-bottom: 3px solid #e32636; border-right: 3px solid #e32636; }
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-2D9CDB?style=for-the-badge&logo=statuspage&logoColor=white" />
-  <img src="https://img.shields.io/badge/Bachelor's-Software%20Engineering-E32636?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Location-Brussels%2C%20Belgium-111111?style=for-the-badge&logo=googlemaps&logoColor=white" />
-</p>
+        .container {
+          position: absolute;
+          top: 40px;
+          left: 60px;
+          width: calc(100% - 120px);
+          height: calc(100% - 80px);
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+        }
 
----
+        .header-section {
+          display: flex;
+          justify-content: space-between;
+          height: 520px;
+          position: relative;
+        }
 
-## 🚀 About Me
+        .col-main { display: flex; flex-direction: column; justify-content: space-between; width: 65%; }
+        .col-art { width: 30%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; position: relative; }
 
-<img align="right" alt="Coding" width="400" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" />
+        .header-block { margin-top: 10px; }
+        .bauhaus-red-block { width: 80px; height: 16px; background-color: #e32636; margin-bottom: 24px; }
 
-I'm a **Software Engineering graduate** from HELB Ilya Prigogine (Brussels), driven by curiosity, creativity, and a strong commitment to continuous learning.
+        h1 {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          font-size: 82px;
+          font-weight: 900;
+          line-height: 0.85;
+          letter-spacing: -4px;
+          text-transform: uppercase;
+          color: #e6edf3;
+          margin: 0 0 24px 0;
+        }
 
-With a solid foundation in computer science and hands-on experience through academic projects and a completed internship at **MyGridEnergy**, I'm eager to apply and deepen my technical skills in a professional environment.
+        .roles-container { display: flex; align-items: center; background-color: #e32636; padding: 12px 20px; width: fit-content; }
+        .role { font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #0d1117; letter-spacing: 2px; }
+        .separator { color: #0d1117; font-size: 10px; margin: 0 16px; }
 
-I thrive in dynamic settings where problem-solving, innovation, and teamwork are key — and I'm motivated to contribute to meaningful projects.
+        .manifest-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; width: 85%; }
+        .manifest-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 2px solid #30363d; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e6edf3; }
+        .manifest-item:first-child { border-top: 2px solid #30363d; }
+        .item-num { font-family: ui-monospace, SFMono-Regular, monospace; color: #e32636; font-weight: 700; font-size: 14px; width: 40px; }
 
-**🎯 Currently seeking:** An alternate contract for a Master's degree combined with hands-on work experience.
+        .geometry-container { position: absolute; top: -20px; right: -20px; width: 320px; height: 320px; z-index: 1; }
+        .geo-circle { position: absolute; top: 20px; right: 20px; width: 200px; height: 200px; background-color: #e32636; border-radius: 50%; opacity: 0.3; }
+        .geo-square { position: absolute; bottom: 20px; left: 20px; width: 160px; height: 160px; background-color: #2d9cdb; opacity: 0.3; }
+        .geo-lines {
+          position: absolute; top: 80px; left: -40px; width: 240px; height: 180px;
+          background-image: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f2c94c 12px, #f2c94c 16px);
+          opacity: 0.3;
+        }
 
-<br clear="both"/>
+        .sys-container { display: flex; flex-direction: column; align-items: flex-end; margin-top: auto; margin-bottom: 10px; z-index: 10; }
+        .barcode { display: flex; height: 48px; margin-bottom: 12px; }
+        .bar { background: #e6edf3; height: 100%; margin-left: 4px; }
+        .b1{width:6px;} .b2{width:14px;} .b3{width:4px;} .b4{width:10px;} .b5{width:24px;} .b6{width:8px;} .b7{width:4px;} .b8{width:18px;} .b9{width:6px;}
 
-### 🔥 What I'm About
-- 💻 Building full-stack applications with **Java, C#, Python, React & Django**
-- 🛡️ Hunting flags in CTF competitions (Federal Police CTF, CyberCrusade, CyberWeek)
-- 📱 Creating cross-platform mobile apps with **.NET MAUI & React Native**
-- 🌱 Learning **Spring Boot**, **Cloud Computing** & **System Architecture**
+        .sys-data { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; color: #e6edf3; text-align: right; font-weight: 700; letter-spacing: 1px; line-height: 1.6; }
+        @keyframes mechanical-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+        .status-dot { display: inline-block; width: 10px; height: 10px; background-color: #2d9cdb; border-radius: 50%; margin-right: 8px; animation: mechanical-blink 2s infinite linear; }
 
----
+        .content-block {
+          margin-top: 60px;
+          padding-top: 40px;
+          border-top: 4px solid #30363d;
+        }
 
-## 🛠️ Technical Arsenal
+        .section-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 48px;
+        }
+        
+        .section-title {
+          font-family: 'Inter', system-ui, sans-serif;
+          font-size: 42px;
+          font-weight: 900;
+          letter-spacing: -2px;
+          text-transform: uppercase;
+          color: #e6edf3;
+        }
 
-### 💻 Languages
-<p align="left">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-</p>
+        .section-dot {
+          width: 16px;
+          height: 16px;
+          background-color: #e32636;
+          margin-right: 20px;
+        }
 
-### 🧩 Frameworks & Libraries
-<p align="left">
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/.NET_MAUI-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaFX-5382A1?style=for-the-badge&logo=java&logoColor=white" />
-  <img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" />
-</p>
+        .grid-2-col {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+        }
 
-### 🗄️ Databases
-<p align="left">
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
-</p>
+        .sub-heading {
+          font-family: 'Inter', system-ui, sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-bottom: 2px solid #30363d;
+          padding-bottom: 12px;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: #e6edf3;
+        }
 
-### ⚙️ Tools & Platforms
-<p align="left">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white" />
-  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
-  <img src="https://img.shields.io/badge/Microsoft_Power_Apps-742774?style=for-the-badge&logo=powerapps&logoColor=white" />
-  <img src="https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white" />
-</p>
+        .text-body {
+          font-size: 17px;
+          line-height: 1.6;
+          font-weight: 500;
+          margin-bottom: 24px;
+          color: #c9d1d9;
+        }
 
-### 📋 Concepts & Methodologies
-<p align="left">
-  <img src="https://img.shields.io/badge/OOP-555555?style=for-the-badge&logo=object&logoColor=white" />
-  <img src="https://img.shields.io/badge/MVC-555555?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/REST_APIs-555555?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Agile%2FScrum-555555?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/CI%2FCD-555555?style=for-the-badge" />
-</p>
+        .bold-hl { font-weight: 900; background-color: #e32636; color: #0d1117; padding: 2px 6px; }
 
----
+        .timeline-item {
+          border-left: 3px solid #e32636;
+          padding-left: 24px;
+          margin-bottom: 32px;
+          position: relative;
+        }
+        .timeline-item::before {
+          content: ''; position: absolute; left: -9px; top: 0; width: 15px; height: 15px; background: #e32636; border: 2px solid #e6edf3;
+        }
+        
+        .timeline-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #e6edf3; }
+        .timeline-date { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #e32636; margin-bottom: 12px; display: block; }
+        .timeline-desc { font-size: 16px; line-height: 1.5; font-weight: 500; color: #c9d1d9; }
 
-## 📌 Featured Projects
+        .win-row {
+          display: flex;
+          align-items: center;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+        }
+        .win-row:last-child { border-bottom: none; }
+        .win-rank {
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 24px;
+          font-weight: 900;
+          color: #e32636;
+          width: 90px;
+        }
+        .win-rank.gold { color: #f2c94c; text-shadow: 0 0 20px rgba(242, 201, 76, 0.3); }
+        .win-title { font-size: 18px; font-weight: 700; flex-grow: 1; color: #e6edf3; }
+        .win-year { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #8b949e; }
 
-| Project | Tech Stack | Description |
-|---------|------------|-------------|
-| 🍦 Ice Cream Simulator | C#, .NET MAUI, Arduino | Cross-platform ice cream simulator with real-time temperature & humidity monitoring via Arduino |
-| 🎯 Duo-Codeur | React Native, Expo Go | Mobile learning app teaching coding through Duolingo-style gamified experience |
-| 🖼️ Collaborative Canvas | Django, JavaScript | Real-time collaborative canvas web application with multi-user interaction |
-| 📚 Biblioplane | Android Studio, Firebase | Campus library locator with map integration, top books & user ratings |
-| 🏦 Stocks & Commands | Java, Spring Boot, REST API | Backend application for stock inventory & customer order management |
-| ⚔️ HelbArmy | Java, JavaFX | 2D game with animations, game logic & user interactions |
-| 📄 Invoice System | C#, .NET Framework | Billing & invoicing system with client management & automated calculations |
-| 🎮 LinkandKing | Unity, C# | Mario-style 2D platformer with custom core gameplay mechanics |
+        .tech-category { margin-bottom: 40px; }
+        .tech-category-title {
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-bottom: 16px;
+          color: #8b949e;
+        }
+        .tech-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .tech-tag {
+          font-family: 'Inter', system-ui, sans-serif;
+          font-size: 15px;
+          font-weight: 700;
+          padding: 8px 16px;
+          border: 2px solid #30363d;
+          background: transparent;
+          color: #e6edf3;
+          text-transform: uppercase;
+        }
+        .tech-tag.primary { background: #e32636; color: #0d1117; border-color: #e32636; }
+        .tech-tag.accent { background: #2d9cdb; color: #0d1117; border-color: #2d9cdb; }
+        .tech-tag.blue { background: #1f6feb; color: #e6edf3; border-color: #1f6feb; }
+        .tech-tag.yellow { background: #f2c94c; color: #0d1117; border-color: #f2c94c; }
+        .tech-tag.green { background: #2ea043; color: #0d1117; border-color: #2ea043; }
 
----
+        .footer-block {
+          margin-top: auto;
+          background: #161b22;
+          color: #e6edf3;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 2px solid #30363d;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 12px; }
+        .contact-item { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #c9d1d9; }
+        .contact-item a { color: #e32636; text-decoration: none; }
+        .contact-item a:hover { text-decoration: underline; }
+        .quote { font-size: 18px; font-style: italic; max-width: 500px; text-align: right; line-height: 1.5; color: #8b949e; }
+      </style>
 
-## 🏆 CTF & Hackathon Achievements
+      <div class="wrapper">
+        <div class="mark m-tl"></div>
+        <div class="mark m-tr"></div>
+        <div class="mark m-bl"></div>
+        <div class="mark m-br"></div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/🏆_Federal_Police_CTF-2024_&_2025-E32636?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/🏆_CyberCrusade_HELB-2024_&_2025-2D9CDB?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/🏆_CyberWeek_Wallonia-2024_&_2025-F2C94C?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/🏆_HACK'N_WOW-2024_&_2025-111111?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/🏆_Tekno--Rush-2024-00B4D8?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/🏆_Odoo_Hackathon-2025-714B67?style=for-the-badge" />
-</p>
+        <div class="container">
+          
+          <div class="header-section">
+            <div class="col-main">
+              <div class="header-block">
+                <div class="bauhaus-red-block"></div>
+                <h1>JOHN<br/>YAZBECK</h1>
+                <div class="roles-container">
+                  <span class="role">SOFTWARE ENGINEER</span>
+                  <span class="separator">■</span>
+                  <span class="role">FULL-STACK</span>
+                  <span class="separator">■</span>
+                  <span class="role">CTF HUNTER</span>
+                </div>
+              </div>
 
-### CTF Highlights
-| Competition | Edition | Role |
-|-------------|---------|------|
-| Federal Police CTF Belgium | 2024 & 2025 | Flag Bounty Hunter / Coding |
-| CyberCrusade CTF HELB | 2024 & 2025 | Flag Bounty Hunter |
-| CyberWeek Wallonia (Pro) | 2024 & 2025 | Competitor |
-| HACK'N WOW | 2024 & 2025 | AI & Development Challenges |
+              <div class="manifest-list">
+                <div class="manifest-item"><span class="item-num">01</span><span>BUILDING SCALABLE SYSTEMS</span></div>
+                <div class="manifest-item"><span class="item-num">02</span><span>BREAKING THINGS LEGALLY</span></div>
+                <div class="manifest-item"><span class="item-num">03</span><span>MOBILE &amp; WEB CRAFTSMAN</span></div>
+                <div class="manifest-item"><span class="item-num">04</span><span>LIFELONG LEARNER</span></div>
+              </div>
+            </div>
 
----
+            <div class="col-art">
+              <div class="geometry-container">
+                <div class="geo-lines"></div>
+                <div class="geo-square"></div>
+                <div class="geo-circle"></div>
+              </div>
+              <div class="sys-container">
+                <div class="barcode">
+                  <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
+                  <div class="bar b4"></div><div class="bar b5"></div><div class="bar b6"></div>
+                  <div class="bar b7"></div><div class="bar b8"></div><div class="bar b9"></div>
+                </div>
+                <div class="sys-data">
+                  REF_ID: JY-2026<br/>
+                  <span class="status-dot"></span>SYS_STATUS: ACTIVE<br/>
+                  MODE: BUILDING
+                </div>
+              </div>
+            </div>
+          </div>
 
-## 💼 Experience & Education
+          <div class="content-block">
+            <div class="section-header">
+              <div class="section-dot"></div>
+              <h2 class="section-title">Operations &amp; Objectives</h2>
+            </div>
+            
+            <div class="grid-2-col">
+              <div>
+                <div class="sub-heading">Current Scope</div>
+                <p class="text-body">
+                  <span class="bold-hl">Software Engineering Graduate</span> from HELB Ilya Prigogine (Brussels) with a strong foundation in computer science and hands-on experience through academic projects and an internship at <span class="bold-hl">MyGridEnergy</span>. Passionate about backend development, software architecture, and AI-powered applications.
+                </p>
+                <div class="timeline-item">
+                  <div class="timeline-title">MyGridEnergy</div>
+                  <span class="timeline-date">Internship 2026</span>
+                  <div class="timeline-desc">Applied academic knowledge in a professional environment, working on real-world software development projects and gaining industry experience.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">Independent Development</div>
+                  <span class="timeline-date">Ongoing</span>
+                  <div class="timeline-desc">Building full-stack applications with <strong>Java, C#, Python, React &amp; Django</strong>. Creating cross-platform mobile apps with <strong>.NET MAUI &amp; React Native</strong>.</div>
+                </div>
+              </div>
 
-### 🎓 Education
-```
-┌─────────────────────────────────────────────────────┐
-│  HELB Ilya Prigogine — Brussels                    │
-│  Bachelor's in Information Technology (2022-2026)  │
-│  Graduated with honors                             │
-└─────────────────────────────────────────────────────┘
-```
-```
-┌─────────────────────────────────────────────────────┐
-│  Upper Secondary Education Certificate             │
-│  Economics & Sociology (2022)                      │
-└─────────────────────────────────────────────────────┘
-```
+              <div>
+                <div class="sub-heading">CTF Engagements</div>
+                <div class="win-row">
+                  <div class="win-rank gold">🏆</div>
+                  <div class="win-title">Federal Police CTF Belgium</div>
+                  <div class="win-year">2024 / 2025</div>
+                </div>
+                <div class="win-row">
+                  <div class="win-rank gold">🏆</div>
+                  <div class="win-title">CyberCrusade CTF HELB</div>
+                  <div class="win-year">2024 / 2025</div>
+                </div>
+                <div class="win-row">
+                  <div class="win-rank">⚡</div>
+                  <div class="win-title">CyberWeek Wallonia (Pro)</div>
+                  <div class="win-year">2024 / 2025</div>
+                </div>
+                <div class="win-row">
+                  <div class="win-rank">⚡</div>
+                  <div class="win-title">HACK'N WOW</div>
+                  <div class="win-year">2024 / 2025</div>
+                </div>
+                <div class="win-row">
+                  <div class="win-rank">⚡</div>
+                  <div class="win-title">Odoo Hackathon - "UI Without Text"</div>
+                  <div class="win-year">2025</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-### 💼 Professional Experience
-- **Internship @ MyGridEnergy** (2026)
-  - Hands-on software development experience
-  - Applied academic knowledge in professional environment
+          <div class="content-block">
+            <div class="section-header">
+              <div class="section-dot" style="background-color: #2d9cdb;"></div>
+              <h2 class="section-title">Technical Arsenal</h2>
+            </div>
+            
+            <div class="grid-2-col">
+              <div>
+                <div class="tech-category">
+                  <div class="tech-category-title">Core Languages</div>
+                  <div class="tech-grid">
+                    <div class="tech-tag primary">Java</div>
+                    <div class="tech-tag primary">C#</div>
+                    <div class="tech-tag primary">Python</div>
+                    <div class="tech-tag yellow">JavaScript</div>
+                    <div class="tech-tag blue">PHP</div>
+                    <div class="tech-tag">C++</div>
+                    <div class="tech-tag">HTML / CSS</div>
+                  </div>
+                </div>
+                <div class="tech-category">
+                  <div class="tech-category-title">Frameworks &amp; Libraries</div>
+                  <div class="tech-grid">
+                    <div class="tech-tag primary">.NET MAUI</div>
+                    <div class="tech-tag primary">.NET Framework</div>
+                    <div class="tech-tag">Entity Framework</div>
+                    <div class="tech-tag accent">React</div>
+                    <div class="tech-tag accent">React Native</div>
+                    <div class="tech-tag blue">Django</div>
+                    <div class="tech-tag blue">Spring Boot</div>
+                    <div class="tech-tag yellow">JavaFX</div>
+                    <div class="tech-tag green">Unity</div>
+                  </div>
+                </div>
+              </div>
 
----
+              <div>
+                <div class="tech-category">
+                  <div class="tech-category-title">Databases / Stores</div>
+                  <div class="tech-grid">
+                    <div class="tech-tag accent">PostgreSQL</div>
+                    <div class="tech-tag blue">MySQL</div>
+                    <div class="tech-tag">MongoDB</div>
+                    <div class="tech-tag primary">SQLite</div>
+                    <div class="tech-tag yellow">Firebase</div>
+                  </div>
+                </div>
+                <div class="tech-category">
+                  <div class="tech-category-title">Tools &amp; Platforms</div>
+                  <div class="tech-grid">
+                    <div class="tech-tag yellow">Git</div>
+                    <div class="tech-tag blue">GitHub</div>
+                    <div class="tech-tag accent">Linux</div>
+                    <div class="tech-tag primary">Android Studio</div>
+                    <div class="tech-tag">Postman</div>
+                    <div class="tech-tag green">Figma</div>
+                    <div class="tech-tag">XAMPP</div>
+                    <div class="tech-tag">Power Apps</div>
+                    <div class="tech-tag">Excel</div>
+                    <div class="tech-tag">Adobe Photoshop</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-## 📊 GitHub Stats
+          <div class="content-block">
+            <div class="section-header">
+              <div class="section-dot" style="background-color: #f2c94c;"></div>
+              <h2 class="section-title">Projects &amp; Education</h2>
+            </div>
+            
+            <div class="grid-2-col">
+              <div>
+                <div class="sub-heading">Featured Projects</div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🍦 Ice Cream Simulator</div>
+                  <span class="timeline-date">.NET MAUI + Arduino</span>
+                  <div class="timeline-desc">Cross-platform ice cream simulator with real-time temperature &amp; humidity monitoring via Arduino integration.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🎯 Duo-Codeur</div>
+                  <span class="timeline-date">React Native + Expo Go</span>
+                  <div class="timeline-desc">Mobile learning app teaching coding through Duolingo-style gamified experience with external API integration.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🏦 Stocks &amp; Commands</div>
+                  <span class="timeline-date">Java + Spring Boot</span>
+                  <div class="timeline-desc">Backend application for stock inventory &amp; customer order management with REST APIs and Maven.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">📚 Biblioplane</div>
+                  <span class="timeline-date">Android + Firebase</span>
+                  <div class="timeline-desc">Campus library locator with map integration, top books &amp; user ratings.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🖼️ Collaborative Canvas</div>
+                  <span class="timeline-date">Django + JavaScript</span>
+                  <div class="timeline-desc">Real-time collaborative canvas web application with multi-user interaction.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">📄 Invoice System</div>
+                  <span class="timeline-date">C# + .NET Framework</span>
+                  <div class="timeline-desc">Billing and invoicing system with client management, article handling, and automated calculations.</div>
+                </div>
+              </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YazbeckJohn&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=E32636&icon_color=2D9CDB" height="180em" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YazbeckJohn&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=E32636" height="180em" />
-</div>
+              <div>
+                <div class="sub-heading">Academic &amp; Professional</div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🎓 BSc in Information Technology</div>
+                  <span class="timeline-date">HELB Ilya Prigogine (2022-2026)</span>
+                  <div class="timeline-desc">Graduated with honors. Specialized in software architecture, data structures, and security protocols.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">📜 Upper Secondary Education</div>
+                  <span class="timeline-date">Economics &amp; Sociology (2022)</span>
+                  <div class="timeline-desc">Strong foundation in analytical thinking and problem-solving.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">💼 Internship @ MyGridEnergy</div>
+                  <span class="timeline-date">2026</span>
+                  <div class="timeline-desc">Hands-on software development experience in a professional environment.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🎯 Currently Seeking</div>
+                  <span class="timeline-date">Alternate Contract (Master's + Work)</span>
+                  <div class="timeline-desc">Combining a Master's degree with hands-on work experience starting in the upcoming academic year.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">🎮 Project Management</div>
+                  <span class="timeline-date">Sinter des Planetes + ICT Knowledge Base</span>
+                  <div class="timeline-desc">Led teams as Scrum Master, coordinating Agile ceremonies and sprint planning for augmented reality and ICT documentation projects.</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<br/>
+          <div class="footer-block">
+            <div class="contact-info">
+              <div class="contact-item">📧 <a href="mailto:johnayazbeck@hotmail.com">johnayazbeck@hotmail.com</a></div>
+              <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/yazbeckjohn">linkedin.com/in/yazbeckjohn</a></div>
+              <div class="contact-item">📱 +32 470 54 86 41</div>
+              <div class="contact-item">📍 Brussels, Belgium</div>
+              <div class="contact-item">▶️ <a href="https://www.youtube.com/@JohnCoding">YouTube @JohnCoding</a></div>
+            </div>
+            <div class="quote">
+              "Building systems that scale,<br/>breaking challenges that don't,<br/>and always pushing the limits."
+            </div>
+          </div>
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YazbeckJohn&theme=radical&hide_border=true&background=0d1117&ring=E32636&fire=E32636&currStreakLabel=E32636" />
-</div>
-
----
-
-## 🌐 Connect With Me
-
-<p align="center">
-  <a href="mailto:johnayazbeck@hotmail.com">
-    <img src="https://img.shields.io/badge/Email-johnyazbeck%40hotmail.com-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/yazbeckjohn">
-    <img src="https://img.shields.io/badge/LinkedIn-yazbeckjohn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://www.youtube.com/@JohnCoding">
-    <img src="https://img.shields.io/badge/YouTube-@JohnCoding-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=YazbeckJohn&label=Profile%20Views&color=E32636&style=for-the-badge" />
-</p>
-
----
-
-<div align="center">
-  <sub>⚡ "Building systems that scale, breaking challenges that don't" ⚡</sub>
-  <br/>
-  <sub>📍 Brussels, Belgium</sub>
-</div>
-```
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
