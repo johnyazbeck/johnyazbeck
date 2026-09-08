@@ -1452,7 +1452,7 @@
 
 
 <!-- ========================================================= -->
-<!-- ACADEMIC & PROFESSIONAL -->
+<!-- ACADEMIC & PROFESSIONAL (REORDERED: Latest to Oldest) -->
 <!-- ========================================================= -->
 
 <g transform="translate(620 1815)">
@@ -1475,8 +1475,7 @@
 
   <g transform="translate(25 75)">
 
-
-    <!-- Currently Seeking -->
+    <!-- 1. Currently Seeking (Latest) -->
     <circle
       cx="7"
       cy="0"
@@ -1516,18 +1515,27 @@
       hands-on professional experience.
     </text>
 
+    <!-- Divider -->
+    <line
+      x1="0"
+      y1="105"
+      x2="470"
+      y2="105"
+      stroke="#30363d"
+      opacity="0.5"
+    />
 
-    <!-- Bachelor -->
+    <!-- 2. BSc Graduate -->
     <circle
       cx="7"
-      cy="125"
+      cy="130"
       r="7"
       fill="#f2c94c"
     />
 
     <text
       x="25"
-      y="131"
+      y="136"
       class="h3"
     >
       Bachelor of Science in Information Technology
@@ -1535,7 +1543,7 @@
 
     <text
       x="25"
-      y="153"
+      y="158"
       class="small yellow"
     >
       HELB ILYA PRIGOGINE · GRADUATED 2026
@@ -1543,7 +1551,7 @@
 
     <text
       x="25"
-      y="177"
+      y="182"
       class="body"
     >
       Software architecture, data structures
@@ -1551,24 +1559,33 @@
 
     <text
       x="25"
-      y="200"
+      y="205"
       class="body"
     >
       and security fundamentals.
     </text>
 
+    <!-- Divider -->
+    <line
+      x1="0"
+      y1="235"
+      x2="470"
+      y2="235"
+      stroke="#30363d"
+      opacity="0.5"
+    />
 
-    <!-- Internship -->
+    <!-- 3. Internship -->
     <circle
       cx="7"
-      cy="250"
+      cy="260"
       r="7"
       fill="#e32636"
     />
 
     <text
       x="25"
-      y="256"
+      y="266"
       class="h3"
     >
       Internship @ MyGridEnergy
@@ -1576,15 +1593,14 @@
 
     <text
       x="25"
-      y="278"
+      y="288"
       class="small red"
     >
-      2026
-    </text>
+      2026    </text>
 
     <text
       x="25"
-      y="302"
+      y="312"
       class="body"
     >
       Hands-on software development in a
@@ -1592,24 +1608,33 @@
 
     <text
       x="25"
-      y="325"
+      y="335"
       class="body"
     >
       professional engineering environment.
     </text>
 
+    <!-- Divider -->
+    <line
+      x1="0"
+      y1="365"
+      x2="470"
+      y2="365"
+      stroke="#30363d"
+      opacity="0.5"
+    />
 
-    <!-- Upper Secondary -->
+    <!-- 4. Upper Secondary (Oldest) -->
     <circle
       cx="7"
-      cy="375"
+      cy="390"
       r="7"
       fill="#2d9cdb"
     />
 
     <text
       x="25"
-      y="381"
+      y="396"
       class="h3"
     >
       Upper Secondary Education
@@ -1617,7 +1642,7 @@
 
     <text
       x="25"
-      y="403"
+      y="418"
       class="small blue"
     >
       ECONOMICS &amp; SOCIOLOGY · 2022
@@ -1625,7 +1650,7 @@
 
     <text
       x="25"
-      y="427"
+      y="442"
       class="body"
     >
       Analytical thinking and problem-solving
@@ -1633,7 +1658,7 @@
 
     <text
       x="25"
-      y="450"
+      y="465"
       class="body"
     >
       foundation.
@@ -1648,7 +1673,6 @@
 <!-- ICT KNOWLEDGE BASE / PROJECT MANAGEMENT -->
 <!-- ========================================================= -->
 
-<!-- Small project-management marker below project list -->
 <g transform="translate(85 2460)">
 
   <rect
