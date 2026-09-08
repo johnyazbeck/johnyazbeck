@@ -2,7 +2,12 @@
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
         .wrapper {
           width: 1200px;
           height: 2800px;
@@ -18,11 +23,13 @@
           overflow: hidden;
           border: 4px solid #e32636;
         }
+
         .mark { position: absolute; width: 24px; height: 24px; z-index: 20; }
         .m-tl { top: 16px; left: 16px; border-top: 3px solid #e32636; border-left: 3px solid #e32636; }
         .m-tr { top: 16px; right: 16px; border-top: 3px solid #e32636; border-right: 3px solid #e32636; }
         .m-bl { bottom: 16px; left: 16px; border-bottom: 3px solid #e32636; border-left: 3px solid #e32636; }
         .m-br { bottom: 16px; right: 16px; border-bottom: 3px solid #e32636; border-right: 3px solid #e32636; }
+
         .container {
           position: absolute;
           top: 40px;
@@ -33,16 +40,20 @@
           display: flex;
           flex-direction: column;
         }
+
         .header-section {
           display: flex;
           justify-content: space-between;
           height: 520px;
           position: relative;
         }
+
         .col-main { display: flex; flex-direction: column; justify-content: space-between; width: 65%; }
         .col-art { width: 30%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; position: relative; }
+
         .header-block { margin-top: 10px; }
         .bauhaus-red-block { width: 80px; height: 16px; background-color: #e32636; margin-bottom: 24px; }
+
         h1 {
           font-family: 'Inter', system-ui, -apple-system, sans-serif;
           font-size: 82px;
@@ -53,13 +64,16 @@
           color: #e6edf3;
           margin: 0 0 24px 0;
         }
+
         .roles-container { display: flex; align-items: center; background-color: #e32636; padding: 12px 20px; width: fit-content; }
         .role { font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #0d1117; letter-spacing: 2px; }
         .separator { color: #0d1117; font-size: 10px; margin: 0 16px; }
+
         .manifest-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; width: 85%; }
         .manifest-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 2px solid #30363d; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e6edf3; }
         .manifest-item:first-child { border-top: 2px solid #30363d; }
         .item-num { font-family: ui-monospace, SFMono-Regular, monospace; color: #e32636; font-weight: 700; font-size: 14px; width: 40px; }
+
         .geometry-container { position: absolute; top: -20px; right: -20px; width: 320px; height: 320px; z-index: 1; }
         .geo-circle { position: absolute; top: 20px; right: 20px; width: 200px; height: 200px; background-color: #e32636; border-radius: 50%; opacity: 0.3; }
         .geo-square { position: absolute; bottom: 20px; left: 20px; width: 160px; height: 160px; background-color: #2d9cdb; opacity: 0.3; }
@@ -68,23 +82,28 @@
           background-image: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f2c94c 12px, #f2c94c 16px);
           opacity: 0.3;
         }
+
         .sys-container { display: flex; flex-direction: column; align-items: flex-end; margin-top: auto; margin-bottom: 10px; z-index: 10; }
         .barcode { display: flex; height: 48px; margin-bottom: 12px; }
         .bar { background: #e6edf3; height: 100%; margin-left: 4px; }
         .b1{width:6px;} .b2{width:14px;} .b3{width:4px;} .b4{width:10px;} .b5{width:24px;} .b6{width:8px;} .b7{width:4px;} .b8{width:18px;} .b9{width:6px;}
+
         .sys-data { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; color: #e6edf3; text-align: right; font-weight: 700; letter-spacing: 1px; line-height: 1.6; }
         @keyframes mechanical-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
         .status-dot { display: inline-block; width: 10px; height: 10px; background-color: #2d9cdb; border-radius: 50%; margin-right: 8px; animation: mechanical-blink 2s infinite linear; }
+
         .content-block {
           margin-top: 60px;
           padding-top: 40px;
           border-top: 4px solid #30363d;
         }
+
         .section-header {
           display: flex;
           align-items: center;
           margin-bottom: 48px;
         }
+        
         .section-title {
           font-family: 'Inter', system-ui, sans-serif;
           font-size: 42px;
@@ -93,17 +112,20 @@
           text-transform: uppercase;
           color: #e6edf3;
         }
+
         .section-dot {
           width: 16px;
           height: 16px;
           background-color: #e32636;
           margin-right: 20px;
         }
+
         .grid-2-col {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 60px;
         }
+
         .sub-heading {
           font-family: 'Inter', system-ui, sans-serif;
           font-size: 20px;
@@ -118,6 +140,7 @@
           justify-content: space-between;
           color: #e6edf3;
         }
+
         .text-body {
           font-size: 17px;
           line-height: 1.6;
@@ -125,7 +148,9 @@
           margin-bottom: 24px;
           color: #c9d1d9;
         }
+
         .bold-hl { font-weight: 900; background-color: #e32636; color: #0d1117; padding: 2px 6px; }
+
         .timeline-item {
           border-left: 3px solid #e32636;
           padding-left: 24px;
@@ -135,9 +160,11 @@
         .timeline-item::before {
           content: ''; position: absolute; left: -9px; top: 0; width: 15px; height: 15px; background: #e32636; border: 2px solid #e6edf3;
         }
+        
         .timeline-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #e6edf3; }
         .timeline-date { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #e32636; margin-bottom: 12px; display: block; }
         .timeline-desc { font-size: 16px; line-height: 1.5; font-weight: 500; color: #c9d1d9; }
+
         .win-row {
           display: flex;
           align-items: center;
@@ -155,6 +182,7 @@
         .win-rank.gold { color: #f2c94c; text-shadow: 0 0 20px rgba(242, 201, 76, 0.3); }
         .win-title { font-size: 18px; font-weight: 700; flex-grow: 1; color: #e6edf3; }
         .win-year { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #8b949e; }
+
         .tech-category { margin-bottom: 40px; }
         .tech-category-title {
           font-family: ui-monospace, SFMono-Regular, monospace;
@@ -185,6 +213,7 @@
         .tech-tag.blue { background: #1f6feb; color: #e6edf3; border-color: #1f6feb; }
         .tech-tag.yellow { background: #f2c94c; color: #0d1117; border-color: #f2c94c; }
         .tech-tag.green { background: #2ea043; color: #0d1117; border-color: #2ea043; }
+
         .footer-block {
           margin-top: auto;
           background: #161b22;
@@ -201,12 +230,15 @@
         .contact-item a:hover { text-decoration: underline; }
         .quote { font-size: 18px; font-style: italic; max-width: 500px; text-align: right; line-height: 1.5; color: #8b949e; }
       </style>
+
       <div class="wrapper">
         <div class="mark m-tl"></div>
         <div class="mark m-tr"></div>
         <div class="mark m-bl"></div>
         <div class="mark m-br"></div>
+
         <div class="container">
+          
           <div class="header-section">
             <div class="col-main">
               <div class="header-block">
@@ -220,6 +252,7 @@
                   <span class="role">CTF HUNTER</span>
                 </div>
               </div>
+
               <div class="manifest-list">
                 <div class="manifest-item"><span class="item-num">01</span><span>BUILDING SCALABLE SYSTEMS</span></div>
                 <div class="manifest-item"><span class="item-num">02</span><span>BREAKING THINGS LEGALLY</span></div>
@@ -227,6 +260,7 @@
                 <div class="manifest-item"><span class="item-num">04</span><span>LIFELONG LEARNER</span></div>
               </div>
             </div>
+
             <div class="col-art">
               <div class="geometry-container">
                 <div class="geo-lines"></div>
@@ -247,11 +281,13 @@
               </div>
             </div>
           </div>
+
           <div class="content-block">
             <div class="section-header">
               <div class="section-dot"></div>
               <h2 class="section-title">Operations &amp; Objectives</h2>
             </div>
+            
             <div class="grid-2-col">
               <div>
                 <div class="sub-heading">Current Scope</div>
@@ -269,6 +305,7 @@
                   <div class="timeline-desc">Building full-stack applications with <strong>Java, C#, Python, React &amp; Django</strong>. Creating cross-platform mobile apps with <strong>.NET MAUI &amp; React Native</strong>.</div>
                 </div>
               </div>
+
               <div>
                 <div class="sub-heading">CTF Engagements</div>
                 <div class="win-row">
@@ -299,11 +336,13 @@
               </div>
             </div>
           </div>
+
           <div class="content-block">
             <div class="section-header">
               <div class="section-dot" style="background-color: #2d9cdb;"></div>
               <h2 class="section-title">Technical Arsenal</h2>
             </div>
+            
             <div class="grid-2-col">
               <div>
                 <div class="tech-category">
@@ -333,6 +372,7 @@
                   </div>
                 </div>
               </div>
+
               <div>
                 <div class="tech-category">
                   <div class="tech-category-title">Databases / Stores</div>
@@ -362,11 +402,13 @@
               </div>
             </div>
           </div>
+
           <div class="content-block">
             <div class="section-header">
               <div class="section-dot" style="background-color: #f2c94c;"></div>
               <h2 class="section-title">Projects &amp; Education</h2>
             </div>
+            
             <div class="grid-2-col">
               <div>
                 <div class="sub-heading">Featured Projects</div>
@@ -401,6 +443,7 @@
                   <div class="timeline-desc">Billing and invoicing system with client management, article handling, and automated calculations.</div>
                 </div>
               </div>
+
               <div>
                 <div class="sub-heading">Academic &amp; Professional</div>
                 <div class="timeline-item">
@@ -431,6 +474,7 @@
               </div>
             </div>
           </div>
+
           <div class="footer-block">
             <div class="contact-info">
               <div class="contact-item">📧 <a href="mailto:johnayazbeck@hotmail.com">johnayazbeck@hotmail.com</a></div>
@@ -443,6 +487,7 @@
               "Building systems that scale,<br/>breaking challenges that don't,<br/>and always pushing the limits."
             </div>
           </div>
+
         </div>
       </div>
     </div>
