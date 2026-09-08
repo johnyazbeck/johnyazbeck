@@ -44,7 +44,7 @@
         .header-section {
           display: flex;
           justify-content: space-between;
-          height: 520px;
+          height: 460px;
           position: relative;
         }
 
@@ -52,27 +52,27 @@
         .col-art { width: 30%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; position: relative; }
 
         .header-block { margin-top: 10px; }
-        .bauhaus-red-block { width: 80px; height: 16px; background-color: #e32636; margin-bottom: 24px; }
+        .bauhaus-red-block { width: 80px; height: 16px; background-color: #e32636; margin-bottom: 20px; }
 
         h1 {
           font-family: 'Inter', system-ui, -apple-system, sans-serif;
-          font-size: 82px;
+          font-size: 78px;
           font-weight: 900;
           line-height: 0.85;
           letter-spacing: -4px;
           text-transform: uppercase;
           color: #e6edf3;
-          margin: 0 0 24px 0;
+          margin: 0 0 20px 0;
         }
 
-        .roles-container { display: flex; align-items: center; background-color: #e32636; padding: 12px 20px; width: fit-content; }
-        .role { font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #0d1117; letter-spacing: 2px; }
-        .separator { color: #0d1117; font-size: 10px; margin: 0 16px; }
+        .roles-container { display: flex; align-items: center; background-color: #e32636; padding: 10px 18px; width: fit-content; }
+        .role { font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace; font-size: 15px; font-weight: 700; color: #0d1117; letter-spacing: 2px; }
+        .separator { color: #0d1117; font-size: 10px; margin: 0 14px; }
 
         .manifest-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; width: 85%; }
-        .manifest-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 2px solid #30363d; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e6edf3; }
+        .manifest-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 2px solid #30363d; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e6edf3; }
         .manifest-item:first-child { border-top: 2px solid #30363d; }
-        .item-num { font-family: ui-monospace, SFMono-Regular, monospace; color: #e32636; font-weight: 700; font-size: 14px; width: 40px; }
+        .item-num { font-family: ui-monospace, SFMono-Regular, monospace; color: #e32636; font-weight: 700; font-size: 13px; width: 36px; }
 
         .geometry-container { position: absolute; top: -20px; right: -20px; width: 320px; height: 320px; z-index: 1; }
         .geo-circle { position: absolute; top: 20px; right: 20px; width: 200px; height: 200px; background-color: #e32636; border-radius: 50%; opacity: 0.3; }
@@ -84,7 +84,7 @@
         }
 
         .sys-container { display: flex; flex-direction: column; align-items: flex-end; margin-top: auto; margin-bottom: 10px; z-index: 10; }
-        .barcode { display: flex; height: 48px; margin-bottom: 12px; }
+        .barcode { display: flex; height: 42px; margin-bottom: 10px; }
         .bar { background: #e6edf3; height: 100%; margin-left: 4px; }
         .b1{width:6px;} .b2{width:14px;} .b3{width:4px;} .b4{width:10px;} .b5{width:24px;} .b6{width:8px;} .b7{width:4px;} .b8{width:18px;} .b9{width:6px;}
 
@@ -93,20 +93,20 @@
         .status-dot { display: inline-block; width: 10px; height: 10px; background-color: #2d9cdb; border-radius: 50%; margin-right: 8px; animation: mechanical-blink 2s infinite linear; }
 
         .content-block {
-          margin-top: 60px;
-          padding-top: 40px;
+          margin-top: 40px;
+          padding-top: 30px;
           border-top: 4px solid #30363d;
         }
 
         .section-header {
           display: flex;
           align-items: center;
-          margin-bottom: 48px;
+          margin-bottom: 30px;
         }
         
         .section-title {
           font-family: 'Inter', system-ui, sans-serif;
-          font-size: 42px;
+          font-size: 36px;
           font-weight: 900;
           letter-spacing: -2px;
           text-transform: uppercase;
@@ -114,27 +114,27 @@
         }
 
         .section-dot {
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
           background-color: #e32636;
-          margin-right: 20px;
+          margin-right: 18px;
         }
 
         .grid-2-col {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 60px;
+          gap: 40px;
         }
 
         .sub-heading {
           font-family: 'Inter', system-ui, sans-serif;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 1px;
           border-bottom: 2px solid #30363d;
-          padding-bottom: 12px;
-          margin-bottom: 24px;
+          padding-bottom: 10px;
+          margin-bottom: 18px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -142,10 +142,10 @@
         }
 
         .text-body {
-          font-size: 17px;
-          line-height: 1.6;
+          font-size: 15px;
+          line-height: 1.5;
           font-weight: 500;
-          margin-bottom: 24px;
+          margin-bottom: 18px;
           color: #c9d1d9;
         }
 
@@ -153,56 +153,56 @@
 
         .timeline-item {
           border-left: 3px solid #e32636;
-          padding-left: 24px;
-          margin-bottom: 32px;
+          padding-left: 18px;
+          margin-bottom: 22px;
           position: relative;
         }
         .timeline-item::before {
           content: ''; position: absolute; left: -9px; top: 0; width: 15px; height: 15px; background: #e32636; border: 2px solid #e6edf3;
         }
         
-        .timeline-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #e6edf3; }
-        .timeline-date { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #e32636; margin-bottom: 12px; display: block; }
-        .timeline-desc { font-size: 16px; line-height: 1.5; font-weight: 500; color: #c9d1d9; }
+        .timeline-title { font-size: 18px; font-weight: 900; margin-bottom: 4px; color: #e6edf3; }
+        .timeline-date { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; font-weight: 700; color: #e32636; margin-bottom: 6px; display: block; }
+        .timeline-desc { font-size: 14px; line-height: 1.4; font-weight: 500; color: #c9d1d9; }
 
         .win-row {
           display: flex;
           align-items: center;
-          padding: 16px 0;
+          padding: 12px 0;
           border-bottom: 1px solid rgba(48, 54, 61, 0.5);
         }
         .win-row:last-child { border-bottom: none; }
         .win-rank {
           font-family: ui-monospace, SFMono-Regular, monospace;
-          font-size: 24px;
+          font-size: 20px;
           font-weight: 900;
           color: #e32636;
-          width: 90px;
+          width: 70px;
         }
         .win-rank.gold { color: #f2c94c; text-shadow: 0 0 20px rgba(242, 201, 76, 0.3); }
-        .win-title { font-size: 18px; font-weight: 700; flex-grow: 1; color: #e6edf3; }
-        .win-year { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #8b949e; }
+        .win-title { font-size: 16px; font-weight: 700; flex-grow: 1; color: #e6edf3; }
+        .win-year { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; font-weight: 700; color: #8b949e; }
 
-        .tech-category { margin-bottom: 40px; }
+        .tech-category { margin-bottom: 25px; }
         .tech-category-title {
           font-family: ui-monospace, SFMono-Regular, monospace;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 2px;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
           color: #8b949e;
         }
         .tech-grid {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
+          gap: 8px;
         }
         .tech-tag {
           font-family: 'Inter', system-ui, sans-serif;
-          font-size: 15px;
+          font-size: 13px;
           font-weight: 700;
-          padding: 8px 16px;
+          padding: 6px 14px;
           border: 2px solid #30363d;
           background: transparent;
           color: #e6edf3;
@@ -213,22 +213,23 @@
         .tech-tag.blue { background: #1f6feb; color: #e6edf3; border-color: #1f6feb; }
         .tech-tag.yellow { background: #f2c94c; color: #0d1117; border-color: #f2c94c; }
         .tech-tag.green { background: #2ea043; color: #0d1117; border-color: #2ea043; }
+        .tech-tag.gray { background: #212936; color: #e6edf3; border-color: #485260; }
 
         .footer-block {
-          margin-top: auto;
+          margin-top: 30px;
           background: #161b22;
           color: #e6edf3;
-          padding: 20px;
+          padding: 16px 20px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           border-top: 2px solid #30363d;
         }
-        .contact-info { display: flex; flex-direction: column; gap: 12px; }
-        .contact-item { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #c9d1d9; }
+        .contact-info { display: flex; flex-direction: column; gap: 6px; }
+        .contact-item { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #c9d1d9; }
         .contact-item a { color: #e32636; text-decoration: none; }
         .contact-item a:hover { text-decoration: underline; }
-        .quote { font-size: 18px; font-style: italic; max-width: 500px; text-align: right; line-height: 1.5; color: #8b949e; }
+        .quote { font-size: 16px; font-style: italic; max-width: 450px; text-align: right; line-height: 1.4; color: #8b949e; }
       </style>
 
       <div class="wrapper">
@@ -292,12 +293,12 @@
               <div>
                 <div class="sub-heading">Current Scope</div>
                 <p class="text-body">
-                  <span class="bold-hl">Software Engineering Graduate</span> from HELB Ilya Prigogine (Brussels) with a strong foundation in computer science and hands-on experience through academic projects and an internship at <span class="bold-hl">MyGridEnergy</span>. Passionate about backend development, software architecture, and AI-powered applications.
+                  <span class="bold-hl">Software Engineering Graduate</span> from HELB Ilya Prigogine (Brussels). Strong foundation in computer science with hands-on experience through academic projects and an internship at <span class="bold-hl">MyGridEnergy</span>. Passionate about backend development and software architecture.
                 </p>
                 <div class="timeline-item">
                   <div class="timeline-title">MyGridEnergy</div>
                   <span class="timeline-date">Internship 2026</span>
-                  <div class="timeline-desc">Applied academic knowledge in a professional environment, working on real-world software development projects and gaining industry experience.</div>
+                  <div class="timeline-desc">Professional software development experience in a real-world engineering environment.</div>
                 </div>
               </div>
 
@@ -306,26 +307,26 @@
                 <div class="win-row">
                   <div class="win-rank gold">🏆</div>
                   <div class="win-title">Federal Police CTF Belgium</div>
-                  <div class="win-year">2024 / 2025</div>
+                  <div class="win-year">2024/25</div>
                 </div>
                 <div class="win-row">
                   <div class="win-rank gold">🏆</div>
                   <div class="win-title">CyberCrusade CTF HELB</div>
-                  <div class="win-year">2024 / 2025</div>
+                  <div class="win-year">2024/25</div>
                 </div>
                 <div class="win-row">
                   <div class="win-rank">⚡</div>
                   <div class="win-title">CyberWeek Wallonia (Pro)</div>
-                  <div class="win-year">2024 / 2025</div>
+                  <div class="win-year">2024/25</div>
                 </div>
                 <div class="win-row">
                   <div class="win-rank">⚡</div>
                   <div class="win-title">HACK'N WOW</div>
-                  <div class="win-year">2024 / 2025</div>
+                  <div class="win-year">2024/25</div>
                 </div>
                 <div class="win-row">
                   <div class="win-rank">⚡</div>
-                  <div class="win-title">Odoo Hackathon - "UI Without Text"</div>
+                  <div class="win-title">Odoo Hackathon</div>
                   <div class="win-year">2025</div>
                 </div>
               </div>
@@ -348,8 +349,8 @@
                     <div class="tech-tag primary">Python</div>
                     <div class="tech-tag yellow">JavaScript</div>
                     <div class="tech-tag blue">PHP</div>
-                    <div class="tech-tag">C++</div>
-                    <div class="tech-tag">HTML / CSS</div>
+                    <div class="tech-tag gray">C++</div>
+                    <div class="tech-tag gray">HTML/CSS</div>
                   </div>
                 </div>
                 <div class="tech-category">
@@ -357,24 +358,24 @@
                   <div class="tech-grid">
                     <div class="tech-tag primary">.NET MAUI</div>
                     <div class="tech-tag primary">.NET Framework</div>
-                    <div class="tech-tag">Entity Framework</div>
                     <div class="tech-tag accent">React</div>
                     <div class="tech-tag accent">React Native</div>
                     <div class="tech-tag blue">Django</div>
                     <div class="tech-tag blue">Spring Boot</div>
                     <div class="tech-tag yellow">JavaFX</div>
                     <div class="tech-tag green">Unity</div>
+                    <div class="tech-tag gray">Entity Framework</div>
                   </div>
                 </div>
               </div>
 
               <div>
                 <div class="tech-category">
-                  <div class="tech-category-title">Databases / Stores</div>
+                  <div class="tech-category-title">Databases</div>
                   <div class="tech-grid">
                     <div class="tech-tag accent">PostgreSQL</div>
                     <div class="tech-tag blue">MySQL</div>
-                    <div class="tech-tag">MongoDB</div>
+                    <div class="tech-tag gray">MongoDB</div>
                     <div class="tech-tag primary">SQLite</div>
                     <div class="tech-tag yellow">Firebase</div>
                   </div>
@@ -386,12 +387,10 @@
                     <div class="tech-tag blue">GitHub</div>
                     <div class="tech-tag accent">Linux</div>
                     <div class="tech-tag primary">Android Studio</div>
-                    <div class="tech-tag">Postman</div>
+                    <div class="tech-tag gray">Postman</div>
                     <div class="tech-tag green">Figma</div>
-                    <div class="tech-tag">XAMPP</div>
-                    <div class="tech-tag">Power Apps</div>
-                    <div class="tech-tag">Excel</div>
-                    <div class="tech-tag">Adobe Photoshop</div>
+                    <div class="tech-tag gray">XAMPP</div>
+                    <div class="tech-tag gray">Power Apps</div>
                   </div>
                 </div>
               </div>
@@ -410,37 +409,42 @@
                 <div class="timeline-item">
                   <div class="timeline-title">🍦 Ice Cream Simulator</div>
                   <span class="timeline-date">.NET MAUI + Arduino</span>
-                  <div class="timeline-desc">Cross-platform ice cream simulator with real-time temperature &amp; humidity monitoring via Arduino integration.</div>
+                  <div class="timeline-desc">Cross-platform simulator with real-time temperature &amp; humidity monitoring.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">🎯 Duo-Codeur</div>
                   <span class="timeline-date">React Native + Expo Go</span>
-                  <div class="timeline-desc">Mobile learning app teaching coding through Duolingo-style gamified experience with external API integration.</div>
+                  <div class="timeline-desc">Gamified coding-learning app with external API integration.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">🏦 Stocks &amp; Commands</div>
                   <span class="timeline-date">Java + Spring Boot</span>
-                  <div class="timeline-desc">Backend application for stock inventory &amp; customer order management with REST APIs and Maven.</div>
+                  <div class="timeline-desc">Inventory and order management backend with REST APIs.</div>
                 </div>
                 <div class="timeline-item">
-                  <div class="timeline-title">📚 Biblioplane</div>
+                  <div class="timeline-title">📚 Biblioplaine</div>
                   <span class="timeline-date">Android + Firebase</span>
-                  <div class="timeline-desc">Campus library locator with map integration, top books &amp; user ratings.</div>
+                  <div class="timeline-desc">Campus library locator with maps, books and user ratings.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">🖼️ Collaborative Canvas</div>
                   <span class="timeline-date">Django + JavaScript</span>
-                  <div class="timeline-desc">Real-time collaborative canvas web application with multi-user interaction.</div>
+                  <div class="timeline-desc">Real-time collaborative canvas web application.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">📄 Invoice System</div>
                   <span class="timeline-date">C# + .NET Framework</span>
-                  <div class="timeline-desc">Billing and invoicing system with client management, article handling, and automated calculations.</div>
+                  <div class="timeline-desc">Client, article and billing management with automation.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">🪐 Sentier des Planètes</div>
-                  <span class="timeline-date">AR + Mobile Development</span>
-                  <div class="timeline-desc">Augmented reality planetary visualization experience in a Pokémon GO-style experience for educational purposes.</div>
+                  <span class="timeline-date">AR + Mobile</span>
+                  <div class="timeline-desc">Augmented reality planetary visualization for education.</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-title">📋 ICT Knowledge Base</div>
+                  <span class="timeline-date">Scrum Master</span>
+                  <div class="timeline-desc">Led team of four, Agile ceremonies and sprint planning for ICT component management.</div>
                 </div>
               </div>
 
@@ -449,27 +453,22 @@
                 <div class="timeline-item">
                   <div class="timeline-title">🎯 Currently Seeking</div>
                   <span class="timeline-date">Master's + Work Contract</span>
-                  <div class="timeline-desc">Looking to combine advanced studies with hands-on professional experience starting in the upcoming academic year.</div>
+                  <div class="timeline-desc">Combining advanced studies with hands-on professional experience.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">🎓 BSc in Information Technology</div>
                   <span class="timeline-date">HELB Ilya Prigogine (2022-2026)</span>
-                  <div class="timeline-desc">Graduated with honors. Specialized in software architecture, data structures, and security protocols.</div>
+                  <div class="timeline-desc">Graduated with honors in software architecture and security.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">💼 Internship @ MyGridEnergy</div>
                   <span class="timeline-date">2026</span>
-                  <div class="timeline-desc">Hands-on software development experience in a professional environment.</div>
+                  <div class="timeline-desc">Professional software development experience.</div>
                 </div>
                 <div class="timeline-item">
                   <div class="timeline-title">📜 Upper Secondary Education</div>
                   <span class="timeline-date">Economics &amp; Sociology (2022)</span>
-                  <div class="timeline-desc">Strong foundation in analytical thinking and problem-solving.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">📋 ICT Knowledge Base</div>
-                  <span class="timeline-date">Scrum Master</span>
-                  <div class="timeline-desc">Led a team of four as Scrum Master, coordinating Agile ceremonies and sprint planning for an ICT component management tool.</div>
+                  <div class="timeline-desc">Analytical thinking and problem-solving foundation.</div>
                 </div>
               </div>
             </div>
