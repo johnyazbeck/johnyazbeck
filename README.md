@@ -1,495 +1,1834 @@
-<svg fill="none" viewBox="0 0 1200 2800" width="1200" height="2800" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2800" viewBox="0 0 1200 2800">
 
-        .wrapper {
-          width: 1200px;
-          height: 2800px;
-          background-color: #0d1117;
-          background-image: 
-            linear-gradient(90deg, #1a1f2e 1px, transparent 1px),
-            linear-gradient(180deg, #1a1f2e 1px, transparent 1px);
-          background-size: 40px 40px;
-          background-position: -1px -1px;
-          position: relative;
-          font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-          color: #e6edf3;
-          overflow: hidden;
-          border: 4px solid #e32636;
-        }
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0d1117"/>
+    <stop offset="0.55" stop-color="#111827"/>
+    <stop offset="1" stop-color="#0b1220"/>
+  </linearGradient>
 
-        .mark { position: absolute; width: 24px; height: 24px; z-index: 20; }
-        .m-tl { top: 16px; left: 16px; border-top: 3px solid #e32636; border-left: 3px solid #e32636; }
-        .m-tr { top: 16px; right: 16px; border-top: 3px solid #e32636; border-right: 3px solid #e32636; }
-        .m-bl { bottom: 16px; left: 16px; border-bottom: 3px solid #e32636; border-left: 3px solid #e32636; }
-        .m-br { bottom: 16px; right: 16px; border-bottom: 3px solid #e32636; border-right: 3px solid #e32636; }
+  <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e32636"/>
+    <stop offset="0.5" stop-color="#f2c94c"/>
+    <stop offset="1" stop-color="#2d9cdb"/>
+  </linearGradient>
 
-        .container {
-          position: absolute;
-          top: 40px;
-          left: 60px;
-          width: calc(100% - 120px);
-          height: calc(100% - 80px);
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-        }
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#2d9cdb"/>
+    <stop offset="1" stop-color="#7c5cff"/>
+  </linearGradient>
 
-        .header-section {
-          display: flex;
-          justify-content: space-between;
-          height: 520px;
-          position: relative;
-        }
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#263142" stroke-width="1"/>
+  </pattern>
 
-        .col-main { display: flex; flex-direction: column; justify-content: space-between; width: 65%; }
-        .col-art { width: 30%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; position: relative; }
+  <filter id="glowRed">
+    <feGaussianBlur stdDeviation="8" result="b"/>
+    <feMerge>
+      <feMergeNode in="b"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
 
-        .header-block { margin-top: 10px; }
-        .bauhaus-red-block { width: 80px; height: 16px; background-color: #e32636; margin-bottom: 24px; }
+  <filter id="glowBlue">
+    <feGaussianBlur stdDeviation="10" result="b"/>
+    <feMerge>
+      <feMergeNode in="b"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
 
-        h1 {
-          font-family: 'Inter', system-ui, -apple-system, sans-serif;
-          font-size: 82px;
-          font-weight: 900;
-          line-height: 0.85;
-          letter-spacing: -4px;
-          text-transform: uppercase;
-          color: #e6edf3;
-          margin: 0 0 24px 0;
-        }
+  <style>
+    .title{
+      font:900 78px Arial,Helvetica,sans-serif;
+      letter-spacing:-3px;
+      fill:#f0f6fc
+    }
 
-        .roles-container { display: flex; align-items: center; background-color: #e32636; padding: 12px 20px; width: fit-content; }
-        .role { font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #0d1117; letter-spacing: 2px; }
-        .separator { color: #0d1117; font-size: 10px; margin: 0 16px; }
+    .h2{
+      font:900 38px Arial,Helvetica,sans-serif;
+      letter-spacing:-1px;
+      fill:#f0f6fc
+    }
 
-        .manifest-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; width: 85%; }
-        .manifest-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 2px solid #30363d; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e6edf3; }
-        .manifest-item:first-child { border-top: 2px solid #30363d; }
-        .item-num { font-family: ui-monospace, SFMono-Regular, monospace; color: #e32636; font-weight: 700; font-size: 14px; width: 40px; }
+    .h3{
+      font:700 20px Arial,Helvetica,sans-serif;
+      fill:#f0f6fc
+    }
 
-        .geometry-container { position: absolute; top: -20px; right: -20px; width: 320px; height: 320px; z-index: 1; }
-        .geo-circle { position: absolute; top: 20px; right: 20px; width: 200px; height: 200px; background-color: #e32636; border-radius: 50%; opacity: 0.3; }
-        .geo-square { position: absolute; bottom: 20px; left: 20px; width: 160px; height: 160px; background-color: #2d9cdb; opacity: 0.3; }
-        .geo-lines {
-          position: absolute; top: 80px; left: -40px; width: 240px; height: 180px;
-          background-image: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f2c94c 12px, #f2c94c 16px);
-          opacity: 0.3;
-        }
+    .body{
+      font:500 17px Arial,Helvetica,sans-serif;
+      fill:#c9d1d9
+    }
 
-        .sys-container { display: flex; flex-direction: column; align-items: flex-end; margin-top: auto; margin-bottom: 10px; z-index: 10; }
-        .barcode { display: flex; height: 48px; margin-bottom: 12px; }
-        .bar { background: #e6edf3; height: 100%; margin-left: 4px; }
-        .b1{width:6px;} .b2{width:14px;} .b3{width:4px;} .b4{width:10px;} .b5{width:24px;} .b6{width:8px;} .b7{width:4px;} .b8{width:18px;} .b9{width:6px;}
+    .small{
+      font:700 12px monospace;
+      letter-spacing:1.5px;
+      fill:#8b949e
+    }
 
-        .sys-data { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; color: #e6edf3; text-align: right; font-weight: 700; letter-spacing: 1px; line-height: 1.6; }
-        @keyframes mechanical-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-        .status-dot { display: inline-block; width: 10px; height: 10px; background-color: #2d9cdb; border-radius: 50%; margin-right: 8px; animation: mechanical-blink 2s infinite linear; }
+    .mono{
+      font:700 14px monospace;
+      letter-spacing:1px;
+      fill:#e6edf3
+    }
 
-        .content-block {
-          margin-top: 60px;
-          padding-top: 40px;
-          border-top: 4px solid #30363d;
-        }
+    .tag{
+      font:700 14px Arial,Helvetica,sans-serif;
+      fill:#0d1117
+    }
 
-        .section-header {
-          display: flex;
-          align-items: center;
-          margin-bottom: 48px;
-        }
-        
-        .section-title {
-          font-family: 'Inter', system-ui, sans-serif;
-          font-size: 42px;
-          font-weight: 900;
-          letter-spacing: -2px;
-          text-transform: uppercase;
-          color: #e6edf3;
-        }
+    .white{fill:#f0f6fc}
+    .muted{fill:#8b949e}
+    .red{fill:#e32636}
+    .yellow{fill:#f2c94c}
+    .blue{fill:#2d9cdb}
+    .green{fill:#2ea043}
+  </style>
+</defs>
 
-        .section-dot {
-          width: 16px;
-          height: 16px;
-          background-color: #e32636;
-          margin-right: 20px;
-        }
 
-        .grid-2-col {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-        }
+<!-- ========================================================= -->
+<!-- BACKGROUND -->
+<!-- ========================================================= -->
 
-        .sub-heading {
-          font-family: 'Inter', system-ui, sans-serif;
-          font-size: 20px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          border-bottom: 2px solid #30363d;
-          padding-bottom: 12px;
-          margin-bottom: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          color: #e6edf3;
-        }
+<rect width="1200" height="2800" fill="url(#bg)"/>
+<rect width="1200" height="2800" fill="url(#grid)" opacity=".75"/>
 
-        .text-body {
-          font-size: 17px;
-          line-height: 1.6;
-          font-weight: 500;
-          margin-bottom: 24px;
-          color: #c9d1d9;
-        }
+<rect
+  x="4"
+  y="4"
+  width="1192"
+  height="2792"
+  rx="4"
+  fill="none"
+  stroke="#e32636"
+  stroke-width="4"
+/>
 
-        .bold-hl { font-weight: 900; background-color: #e32636; color: #0d1117; padding: 2px 6px; }
 
-        .timeline-item {
-          border-left: 3px solid #e32636;
-          padding-left: 24px;
-          margin-bottom: 32px;
-          position: relative;
-        }
-        .timeline-item::before {
-          content: ''; position: absolute; left: -9px; top: 0; width: 15px; height: 15px; background: #e32636; border: 2px solid #e6edf3;
-        }
-        
-        .timeline-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #e6edf3; }
-        .timeline-date { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #e32636; margin-bottom: 12px; display: block; }
-        .timeline-desc { font-size: 16px; line-height: 1.5; font-weight: 500; color: #c9d1d9; }
+<!-- ========================================================= -->
+<!-- REGISTRATION MARKS -->
+<!-- ========================================================= -->
 
-        .win-row {
-          display: flex;
-          align-items: center;
-          padding: 16px 0;
-          border-bottom: 1px solid rgba(48, 54, 61, 0.5);
-        }
-        .win-row:last-child { border-bottom: none; }
-        .win-rank {
-          font-family: ui-monospace, SFMono-Regular, monospace;
-          font-size: 24px;
-          font-weight: 900;
-          color: #e32636;
-          width: 90px;
-        }
-        .win-rank.gold { color: #f2c94c; text-shadow: 0 0 20px rgba(242, 201, 76, 0.3); }
-        .win-title { font-size: 18px; font-weight: 700; flex-grow: 1; color: #e6edf3; }
-        .win-year { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 700; color: #8b949e; }
+<g stroke="#e32636" stroke-width="3" fill="none">
+  <path d="M20 44V20H44"/>
+  <path d="M1156 20h24v24"/>
+  <path d="M20 2756v24h24"/>
+  <path d="M1156 2780h24v-24"/>
+</g>
 
-        .tech-category { margin-bottom: 40px; }
-        .tech-category-title {
-          font-family: ui-monospace, SFMono-Regular, monospace;
-          font-size: 14px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          margin-bottom: 16px;
-          color: #8b949e;
-        }
-        .tech-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-        .tech-tag {
-          font-family: 'Inter', system-ui, sans-serif;
-          font-size: 15px;
-          font-weight: 700;
-          padding: 8px 16px;
-          border: 2px solid #30363d;
-          background: transparent;
-          color: #e6edf3;
-          text-transform: uppercase;
-        }
-        .tech-tag.primary { background: #e32636; color: #0d1117; border-color: #e32636; }
-        .tech-tag.accent { background: #2d9cdb; color: #0d1117; border-color: #2d9cdb; }
-        .tech-tag.blue { background: #1f6feb; color: #e6edf3; border-color: #1f6feb; }
-        .tech-tag.yellow { background: #f2c94c; color: #0d1117; border-color: #f2c94c; }
-        .tech-tag.green { background: #2ea043; color: #0d1117; border-color: #2ea043; }
 
-        .footer-block {
-          margin-top: auto;
-          background: #161b22;
-          color: #e6edf3;
-          padding: 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-top: 2px solid #30363d;
-        }
-        .contact-info { display: flex; flex-direction: column; gap: 12px; }
-        .contact-item { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 16px; font-weight: 700; color: #c9d1d9; }
-        .contact-item a { color: #e32636; text-decoration: none; }
-        .contact-item a:hover { text-decoration: underline; }
-        .quote { font-size: 18px; font-style: italic; max-width: 500px; text-align: right; line-height: 1.5; color: #8b949e; }
-      </style>
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
 
-      <div class="wrapper">
-        <div class="mark m-tl"></div>
-        <div class="mark m-tr"></div>
-        <div class="mark m-bl"></div>
-        <div class="mark m-br"></div>
+<g transform="translate(60 60)">
 
-        <div class="container">
-          
-          <div class="header-section">
-            <div class="col-main">
-              <div class="header-block">
-                <div class="bauhaus-red-block"></div>
-                <h1>JOHN<br/>YAZBECK</h1>
-                <div class="roles-container">
-                  <span class="role">SOFTWARE ENGINEER</span>
-                  <span class="separator">■</span>
-                  <span class="role">FULL-STACK</span>
-                  <span class="separator">■</span>
-                  <span class="role">CTF HUNTER</span>
-                </div>
-              </div>
+  <!-- Color bars -->
+  <rect x="0" y="0" width="80" height="14" rx="2" fill="#e32636"/>
+  <rect x="95" y="0" width="26" height="14" fill="#f2c94c"/>
+  <rect x="135" y="0" width="50" height="14" fill="#2d9cdb"/>
 
-              <div class="manifest-list">
-                <div class="manifest-item"><span class="item-num">01</span><span>BUILDING SCALABLE SYSTEMS</span></div>
-                <div class="manifest-item"><span class="item-num">02</span><span>BREAKING THINGS LEGALLY</span></div>
-                <div class="manifest-item"><span class="item-num">03</span><span>MOBILE &amp; WEB CRAFTSMAN</span></div>
-                <div class="manifest-item"><span class="item-num">04</span><span>LIFELONG LEARNER</span></div>
-              </div>
-            </div>
+  <!-- Name -->
+  <text x="0" y="92" class="title">JOHN</text>
+  <text x="0" y="160" class="title">YAZBECK</text>
 
-            <div class="col-art">
-              <div class="geometry-container">
-                <div class="geo-lines"></div>
-                <div class="geo-square"></div>
-                <div class="geo-circle"></div>
-              </div>
-              <div class="sys-container">
-                <div class="barcode">
-                  <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
-                  <div class="bar b4"></div><div class="bar b5"></div><div class="bar b6"></div>
-                  <div class="bar b7"></div><div class="bar b8"></div><div class="bar b9"></div>
-                </div>
-                <div class="sys-data">
-                  REF_ID: JY-2026<br/>
-                  <span class="status-dot"></span>SYS_STATUS: ACTIVE<br/>
-                  MODE: BUILDING
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- Role banner -->
+  <rect x="0" y="188" width="575" height="48" rx="4" fill="url(#hero)"/>
 
-          <div class="content-block">
-            <div class="section-header">
-              <div class="section-dot"></div>
-              <h2 class="section-title">Operations &amp; Objectives</h2>
-            </div>
-            
-            <div class="grid-2-col">
-              <div>
-                <div class="sub-heading">Current Scope</div>
-                <p class="text-body">
-                  <span class="bold-hl">Software Engineering Graduate</span> from HELB Ilya Prigogine (Brussels) with a strong foundation in computer science and hands-on experience through academic projects and an internship at <span class="bold-hl">MyGridEnergy</span>. Passionate about backend development, software architecture, and AI-powered applications.
-                </p>
-                <div class="timeline-item">
-                  <div class="timeline-title">MyGridEnergy</div>
-                  <span class="timeline-date">Internship 2026</span>
-                  <div class="timeline-desc">Applied academic knowledge in a professional environment, working on real-world software development projects and gaining industry experience.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">Independent Development</div>
-                  <span class="timeline-date">Ongoing</span>
-                  <div class="timeline-desc">Building full-stack applications with <strong>Java, C#, Python, React &amp; Django</strong>. Creating cross-platform mobile apps with <strong>.NET MAUI &amp; React Native</strong>.</div>
-                </div>
-              </div>
+  <text
+    x="18"
+    y="219"
+    font-family="monospace"
+    font-size="14"
+    font-weight="700"
+    fill="#0d1117"
+  >
+    SOFTWARE ENGINEER
+  </text>
 
-              <div>
-                <div class="sub-heading">CTF Engagements</div>
-                <div class="win-row">
-                  <div class="win-rank gold">🏆</div>
-                  <div class="win-title">Federal Police CTF Belgium</div>
-                  <div class="win-year">2024 / 2025</div>
-                </div>
-                <div class="win-row">
-                  <div class="win-rank gold">🏆</div>
-                  <div class="win-title">CyberCrusade CTF HELB</div>
-                  <div class="win-year">2024 / 2025</div>
-                </div>
-                <div class="win-row">
-                  <div class="win-rank">⚡</div>
-                  <div class="win-title">CyberWeek Wallonia (Pro)</div>
-                  <div class="win-year">2024 / 2025</div>
-                </div>
-                <div class="win-row">
-                  <div class="win-rank">⚡</div>
-                  <div class="win-title">HACK'N WOW</div>
-                  <div class="win-year">2024 / 2025</div>
-                </div>
-                <div class="win-row">
-                  <div class="win-rank">⚡</div>
-                  <div class="win-title">Odoo Hackathon - "UI Without Text"</div>
-                  <div class="win-year">2025</div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <text
+    x="190"
+    y="219"
+    font-size="13"
+    font-weight="900"
+    fill="#0d1117"
+  >■</text>
 
-          <div class="content-block">
-            <div class="section-header">
-              <div class="section-dot" style="background-color: #2d9cdb;"></div>
-              <h2 class="section-title">Technical Arsenal</h2>
-            </div>
-            
-            <div class="grid-2-col">
-              <div>
-                <div class="tech-category">
-                  <div class="tech-category-title">Core Languages</div>
-                  <div class="tech-grid">
-                    <div class="tech-tag primary">Java</div>
-                    <div class="tech-tag primary">C#</div>
-                    <div class="tech-tag primary">Python</div>
-                    <div class="tech-tag yellow">JavaScript</div>
-                    <div class="tech-tag blue">PHP</div>
-                    <div class="tech-tag">C++</div>
-                    <div class="tech-tag">HTML / CSS</div>
-                  </div>
-                </div>
-                <div class="tech-category">
-                  <div class="tech-category-title">Frameworks &amp; Libraries</div>
-                  <div class="tech-grid">
-                    <div class="tech-tag primary">.NET MAUI</div>
-                    <div class="tech-tag primary">.NET Framework</div>
-                    <div class="tech-tag">Entity Framework</div>
-                    <div class="tech-tag accent">React</div>
-                    <div class="tech-tag accent">React Native</div>
-                    <div class="tech-tag blue">Django</div>
-                    <div class="tech-tag blue">Spring Boot</div>
-                    <div class="tech-tag yellow">JavaFX</div>
-                    <div class="tech-tag green">Unity</div>
-                  </div>
-                </div>
-              </div>
+  <text
+    x="212"
+    y="219"
+    font-family="monospace"
+    font-size="14"
+    font-weight="700"
+    fill="#0d1117"
+  >
+    FULL-STACK
+  </text>
 
-              <div>
-                <div class="tech-category">
-                  <div class="tech-category-title">Databases / Stores</div>
-                  <div class="tech-grid">
-                    <div class="tech-tag accent">PostgreSQL</div>
-                    <div class="tech-tag blue">MySQL</div>
-                    <div class="tech-tag">MongoDB</div>
-                    <div class="tech-tag primary">SQLite</div>
-                    <div class="tech-tag yellow">Firebase</div>
-                  </div>
-                </div>
-                <div class="tech-category">
-                  <div class="tech-category-title">Tools &amp; Platforms</div>
-                  <div class="tech-grid">
-                    <div class="tech-tag yellow">Git</div>
-                    <div class="tech-tag blue">GitHub</div>
-                    <div class="tech-tag accent">Linux</div>
-                    <div class="tech-tag primary">Android Studio</div>
-                    <div class="tech-tag">Postman</div>
-                    <div class="tech-tag green">Figma</div>
-                    <div class="tech-tag">XAMPP</div>
-                    <div class="tech-tag">Power Apps</div>
-                    <div class="tech-tag">Excel</div>
-                    <div class="tech-tag">Adobe Photoshop</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <text
+    x="338"
+    y="219"
+    font-size="13"
+    font-weight="900"
+    fill="#0d1117"
+  >■</text>
 
-          <div class="content-block">
-            <div class="section-header">
-              <div class="section-dot" style="background-color: #f2c94c;"></div>
-              <h2 class="section-title">Projects &amp; Education</h2>
-            </div>
-            
-            <div class="grid-2-col">
-              <div>
-                <div class="sub-heading">Featured Projects</div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🍦 Ice Cream Simulator</div>
-                  <span class="timeline-date">.NET MAUI + Arduino</span>
-                  <div class="timeline-desc">Cross-platform ice cream simulator with real-time temperature &amp; humidity monitoring via Arduino integration.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🎯 Duo-Codeur</div>
-                  <span class="timeline-date">React Native + Expo Go</span>
-                  <div class="timeline-desc">Mobile learning app teaching coding through Duolingo-style gamified experience with external API integration.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🏦 Stocks &amp; Commands</div>
-                  <span class="timeline-date">Java + Spring Boot</span>
-                  <div class="timeline-desc">Backend application for stock inventory &amp; customer order management with REST APIs and Maven.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">📚 Biblioplane</div>
-                  <span class="timeline-date">Android + Firebase</span>
-                  <div class="timeline-desc">Campus library locator with map integration, top books &amp; user ratings.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🖼️ Collaborative Canvas</div>
-                  <span class="timeline-date">Django + JavaScript</span>
-                  <div class="timeline-desc">Real-time collaborative canvas web application with multi-user interaction.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">📄 Invoice System</div>
-                  <span class="timeline-date">C# + .NET Framework</span>
-                  <div class="timeline-desc">Billing and invoicing system with client management, article handling, and automated calculations.</div>
-                </div>
-              </div>
+  <text
+    x="360"
+    y="219"
+    font-family="monospace"
+    font-size="14"
+    font-weight="700"
+    fill="#0d1117"
+  >
+    CTF HUNTER
+  </text>
 
-              <div>
-                <div class="sub-heading">Academic &amp; Professional</div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🎓 BSc in Information Technology</div>
-                  <span class="timeline-date">HELB Ilya Prigogine (2022-2026)</span>
-                  <div class="timeline-desc">Graduated with honors. Specialized in software architecture, data structures, and security protocols.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">📜 Upper Secondary Education</div>
-                  <span class="timeline-date">Economics &amp; Sociology (2022)</span>
-                  <div class="timeline-desc">Strong foundation in analytical thinking and problem-solving.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">💼 Internship @ MyGridEnergy</div>
-                  <span class="timeline-date">2026</span>
-                  <div class="timeline-desc">Hands-on software development experience in a professional environment.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🎯 Currently Seeking</div>
-                  <span class="timeline-date">Alternate Contract (Master's + Work)</span>
-                  <div class="timeline-desc">Combining a Master's degree with hands-on work experience starting in the upcoming academic year.</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-title">🎮 Project Management</div>
-                  <span class="timeline-date">Sinter des Planetes + ICT Knowledge Base</span>
-                  <div class="timeline-desc">Led teams as Scrum Master, coordinating Agile ceremonies and sprint planning for augmented reality and ICT documentation projects.</div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="footer-block">
-            <div class="contact-info">
-              <div class="contact-item">📧 <a href="mailto:johnayazbeck@hotmail.com">johnayazbeck@hotmail.com</a></div>
-              <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/yazbeckjohn">linkedin.com/in/yazbeckjohn</a></div>
-              <div class="contact-item">📱 +32 470 54 86 41</div>
-              <div class="contact-item">📍 Brussels, Belgium</div>
-              <div class="contact-item">▶️ <a href="https://www.youtube.com/@JohnCoding">YouTube @JohnCoding</a></div>
-            </div>
-            <div class="quote">
-              "Building systems that scale,<br/>breaking challenges that don't,<br/>and always pushing the limits."
-            </div>
-          </div>
+  <!-- Geometric art -->
+  <g transform="translate(770,-5)">
 
-        </div>
-      </div>
-    </div>
-  </foreignObject>
+    <circle
+      cx="180"
+      cy="105"
+      r="105"
+      fill="#e32636"
+      opacity=".75"
+      filter="url(#glowRed)"
+    />
+
+    <rect
+      x="35"
+      y="155"
+      width="155"
+      height="155"
+      fill="#2d9cdb"
+      opacity=".7"
+    />
+
+    <path
+      d="M0 230L170 60
+         M-10 260L200 50
+         M35 290L230 95"
+      stroke="#f2c94c"
+      stroke-width="10"
+      opacity=".8"
+    />
+
+    <circle
+      cx="180"
+      cy="105"
+      r="48"
+      fill="none"
+      stroke="#f0f6fc"
+      stroke-width="2"
+      opacity=".8"
+    />
+
+  </g>
+
+
+  <!-- Manifest -->
+  <g transform="translate(0 285)">
+
+    <line
+      x1="0"
+      y1="0"
+      x2="650"
+      y2="0"
+      stroke="#30363d"
+      stroke-width="2"
+    />
+
+    <text x="0" y="28" class="small red">01</text>
+    <text x="45" y="28" class="mono">
+      BUILDING SCALABLE SYSTEMS
+    </text>
+
+    <line
+      x1="0"
+      y1="45"
+      x2="650"
+      y2="45"
+      stroke="#30363d"
+    />
+
+    <text x="0" y="73" class="small yellow">02</text>
+    <text x="45" y="73" class="mono">
+      BREAKING THINGS LEGALLY
+    </text>
+
+    <line
+      x1="0"
+      y1="90"
+      x2="650"
+      y2="90"
+      stroke="#30363d"
+    />
+
+    <text x="0" y="118" class="small blue">03</text>
+    <text x="45" y="118" class="mono">
+      MOBILE &amp; WEB CRAFTSMAN
+    </text>
+
+    <line
+      x1="0"
+      y1="135"
+      x2="650"
+      y2="135"
+      stroke="#30363d"
+    />
+
+    <text x="0" y="163" class="small green">04</text>
+    <text x="45" y="163" class="mono">
+      LIFELONG LEARNER
+    </text>
+
+  </g>
+
+
+  <!-- Telemetry -->
+  <g transform="translate(850 330)">
+
+    <g fill="#f0f6fc">
+      <rect x="0" y="0" width="5" height="42"/>
+      <rect x="11" y="0" width="13" height="42"/>
+      <rect x="30" y="0" width="4" height="42"/>
+      <rect x="40" y="0" width="9" height="42"/>
+      <rect x="55" y="0" width="22" height="42"/>
+      <rect x="83" y="0" width="7" height="42"/>
+      <rect x="96" y="0" width="4" height="42"/>
+      <rect x="106" y="0" width="17" height="42"/>
+      <rect x="129" y="0" width="6" height="42"/>
+    </g>
+
+    <text x="0" y="66" class="small">
+      REF_ID: JY-2026
+    </text>
+
+    <circle
+      cx="8"
+      cy="88"
+      r="5"
+      fill="#2d9cdb"
+    />
+
+    <text x="22" y="93" class="small">
+      SYS_STATUS: ACTIVE
+    </text>
+
+    <text x="0" y="118" class="small">
+      MODE: BUILDING
+    </text>
+
+  </g>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- OPERATIONS & OBJECTIVES -->
+<!-- ========================================================= -->
+
+<line
+  x1="60"
+  y1="560"
+  x2="1140"
+  y2="560"
+  stroke="#30363d"
+  stroke-width="4"
+/>
+
+<rect
+  x="60"
+  y="600"
+  width="16"
+  height="16"
+  fill="#e32636"
+/>
+
+<text
+  x="100"
+  y="617"
+  class="h2"
+>
+  OPERATIONS &amp; OBJECTIVES
+</text>
+
+
+<!-- ========================================================= -->
+<!-- CURRENT SCOPE -->
+<!-- ========================================================= -->
+
+<rect
+  x="60"
+  y="665"
+  width="515"
+  height="480"
+  rx="10"
+  fill="#111827"
+  stroke="#30363d"
+/>
+
+<text
+  x="85"
+  y="705"
+  class="h3"
+>
+  CURRENT SCOPE
+</text>
+
+<line
+  x1="85"
+  y1="720"
+  x2="550"
+  y2="720"
+  stroke="#30363d"
+  stroke-width="2"
+/>
+
+<rect
+  x="85"
+  y="745"
+  width="260"
+  height="30"
+  rx="4"
+  fill="#e32636"
+/>
+
+<text
+  x="96"
+  y="766"
+  font-family="Arial,Helvetica,sans-serif"
+  font-size="14"
+  font-weight="700"
+  fill="#0d1117"
+>
+  SOFTWARE ENGINEERING GRADUATE
+</text>
+
+<text x="85" y="805" class="body">
+  HELB Ilya Prigogine (Brussels) with a strong
+</text>
+
+<text x="85" y="830" class="body">
+  foundation in computer science and hands-on
+</text>
+
+<text x="85" y="855" class="body">
+  experience through academic projects and an
+</text>
+
+<text x="85" y="880" class="body">
+  internship at MyGridEnergy.
+</text>
+
+<text x="85" y="915" class="body">
+  Focused on backend development, software
+</text>
+
+<text x="85" y="940" class="body">
+  architecture, and AI-powered applications.
+</text>
+
+
+<!-- MyGridEnergy timeline -->
+<line
+  x1="100"
+  y1="980"
+  x2="100"
+  y2="1060"
+  stroke="#e32636"
+  stroke-width="3"
+/>
+
+<circle
+  cx="100"
+  cy="980"
+  r="7"
+  fill="#e32636"
+/>
+
+<text x="125" y="985" class="h3">
+  MyGridEnergy
+</text>
+
+<text x="125" y="1008" class="small red">
+  INTERNSHIP 2026
+</text>
+
+<text x="125" y="1032" class="body">
+  Professional software development
+</text>
+
+<text x="125" y="1055" class="body">
+  and real-world engineering experience.
+</text>
+
+
+<!-- ========================================================= -->
+<!-- CTF ENGAGEMENTS -->
+<!-- ========================================================= -->
+
+<rect
+  x="625"
+  y="665"
+  width="515"
+  height="480"
+  rx="10"
+  fill="#111827"
+  stroke="#30363d"
+/>
+
+<text
+  x="650"
+  y="705"
+  class="h3"
+>
+  CTF ENGAGEMENTS
+</text>
+
+<line
+  x1="650"
+  y1="720"
+  x2="1115"
+  y2="720"
+  stroke="#30363d"
+  stroke-width="2"
+/>
+
+<g transform="translate(650 760)">
+
+  <!-- CTF 1 -->
+  <circle
+    cx="16"
+    cy="0"
+    r="13"
+    fill="#f2c94c"
+  />
+
+  <text
+    x="8"
+    y="6"
+    font-size="15"
+  >★</text>
+
+  <text
+    x="45"
+    y="6"
+    class="h3"
+  >
+    Federal Police CTF Belgium
+  </text>
+
+  <text
+    x="430"
+    y="6"
+    class="small"
+  >
+    2024/25
+  </text>
+
+  <line
+    x1="0"
+    y1="35"
+    x2="465"
+    y2="35"
+    stroke="#30363d"
+  />
+
+
+  <!-- CTF 2 -->
+  <circle
+    cx="16"
+    cy="65"
+    r="13"
+    fill="#f2c94c"
+  />
+
+  <text
+    x="8"
+    y="71"
+    font-size="15"
+  >★</text>
+
+  <text
+    x="45"
+    y="71"
+    class="h3"
+  >
+    CyberCrusade CTF HELB
+  </text>
+
+  <text
+    x="430"
+    y="71"
+    class="small"
+  >
+    2024/25
+  </text>
+
+  <line
+    x1="0"
+    y1="100"
+    x2="465"
+    y2="100"
+    stroke="#30363d"
+  />
+
+
+  <!-- CTF 3 -->
+  <circle
+    cx="16"
+    cy="130"
+    r="13"
+    fill="#2d9cdb"
+  />
+
+  <text
+    x="8"
+    y="136"
+    font-size="15"
+  >⚡</text>
+
+  <text
+    x="45"
+    y="136"
+    class="h3"
+  >
+    CyberWeek Wallonia (Pro)
+  </text>
+
+  <text
+    x="430"
+    y="136"
+    class="small"
+  >
+    2024/25
+  </text>
+
+  <line
+    x1="0"
+    y1="165"
+    x2="465"
+    y2="165"
+    stroke="#30363d"
+  />
+
+
+  <!-- CTF 4 -->
+  <circle
+    cx="16"
+    cy="195"
+    r="13"
+    fill="#2d9cdb"
+  />
+
+  <text
+    x="8"
+    y="201"
+    font-size="15"
+  >⚡</text>
+
+  <text
+    x="45"
+    y="201"
+    class="h3"
+  >
+    HACK'N WOW
+  </text>
+
+  <text
+    x="430"
+    y="201"
+    class="small"
+  >
+    2024/25
+  </text>
+
+  <line
+    x1="0"
+    y1="230"
+    x2="465"
+    y2="230"
+    stroke="#30363d"
+  />
+
+
+  <!-- CTF 5 -->
+  <circle
+    cx="16"
+    cy="260"
+    r="13"
+    fill="#e32636"
+  />
+
+  <text
+    x="8"
+    y="266"
+    font-size="15"
+  >◆</text>
+
+  <text
+    x="45"
+    y="266"
+    class="h3"
+  >
+    Odoo Hackathon — UI Without Text
+  </text>
+
+  <text
+    x="430"
+    y="266"
+    class="small"
+  >
+    2025
+  </text>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- TECHNICAL ARSENAL -->
+<!-- ========================================================= -->
+
+<line
+  x1="60"
+  y1="1210"
+  x2="1140"
+  y2="1210"
+  stroke="#30363d"
+  stroke-width="4"
+/>
+
+<rect
+  x="60"
+  y="1250"
+  width="16"
+  height="16"
+  fill="#2d9cdb"
+/>
+
+<text
+  x="100"
+  y="1267"
+  class="h2"
+>
+  TECHNICAL ARSENAL
+</text>
+
+
+<!-- Tech groups -->
+<g transform="translate(60 1315)">
+
+  <!-- Core languages -->
+  <text x="0" y="0" class="small">
+    CORE LANGUAGES
+  </text>
+
+  <g transform="translate(0 25)">
+
+    <rect
+      width="90"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="20" y="23" class="tag">JAVA</text>
+
+    <rect
+      x="102"
+      width="80"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="126" y="23" class="tag">C#</text>
+
+    <rect
+      x="194"
+      width="100"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="215" y="23" class="tag">PYTHON</text>
+
+    <rect
+      x="306"
+      width="115"
+      height="36"
+      rx="6"
+      fill="#f2c94c"
+    />
+    <text x="325" y="23" class="tag">JAVASCRIPT</text>
+
+    <rect
+      x="433"
+      width="75"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="452" y="23" class="tag">PHP</text>
+
+    <rect
+      x="520"
+      width="80"
+      height="36"
+      rx="6"
+      fill="#212936"
+      stroke="#485260"
+    />
+    <text
+      x="543"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      C++
+    </text>
+
+    <rect
+      x="612"
+      width="120"
+      height="36"
+      rx="6"
+      fill="#212936"
+      stroke="#485260"
+    />
+    <text
+      x="626"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      HTML / CSS
+    </text>
+
+  </g>
+
+
+  <!-- Frameworks -->
+  <text
+    x="0"
+    y="105"
+    class="small"
+  >
+    FRAMEWORKS &amp; LIBRARIES
+  </text>
+
+  <g transform="translate(0 130)">
+
+    <rect
+      width="105"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="15" y="23" class="tag">
+      .NET MAUI
+    </text>
+
+    <rect
+      x="117"
+      width="125"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="130" y="23" class="tag">
+      .NET FRAMEWORK
+    </text>
+
+    <rect
+      x="254"
+      width="135"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="273" y="23" class="tag">
+      REACT
+    </text>
+
+    <rect
+      x="401"
+      width="155"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="415" y="23" class="tag">
+      REACT NATIVE
+    </text>
+
+    <rect
+      x="568"
+      width="95"
+      height="36"
+      rx="6"
+      fill="#1f6feb"
+    />
+    <text
+      x="588"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      DJANGO
+    </text>
+
+    <rect
+      x="675"
+      width="125"
+      height="36"
+      rx="6"
+      fill="#1f6feb"
+    />
+    <text
+      x="688"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      SPRING BOOT
+    </text>
+
+    <rect
+      x="812"
+      width="95"
+      height="36"
+      rx="6"
+      fill="#f2c94c"
+    />
+    <text x="827" y="23" class="tag">
+      JAVAFX
+    </text>
+
+    <rect
+      x="919"
+      width="80"
+      height="36"
+      rx="6"
+      fill="#2ea043"
+    />
+    <text x="938" y="23" class="tag">
+      UNITY
+    </text>
+
+  </g>
+
+
+  <!-- Databases -->
+  <text
+    x="0"
+    y="210"
+    class="small"
+  >
+    DATABASES / STORES
+  </text>
+
+  <g transform="translate(0 235)">
+
+    <rect
+      width="115"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="17" y="23" class="tag">
+      POSTGRESQL
+    </text>
+
+    <rect
+      x="127"
+      width="85"
+      height="36"
+      rx="6"
+      fill="#1f6feb"
+    />
+    <text
+      x="145"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      MYSQL
+    </text>
+
+    <rect
+      x="224"
+      width="105"
+      height="36"
+      rx="6"
+      fill="#212936"
+      stroke="#485260"
+    />
+    <text
+      x="240"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      MONGODB
+    </text>
+
+    <rect
+      x="341"
+      width="90"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="360" y="23" class="tag">
+      SQLITE
+    </text>
+
+    <rect
+      x="443"
+      width="95"
+      height="36"
+      rx="6"
+      fill="#f2c94c"
+    />
+    <text x="458" y="23" class="tag">
+      FIREBASE
+    </text>
+
+  </g>
+
+
+  <!-- Tools -->
+  <text
+    x="600"
+    y="210"
+    class="small"
+  >
+    TOOLS &amp; PLATFORMS
+  </text>
+
+  <g transform="translate(600 235)">
+
+    <rect
+      width="70"
+      height="36"
+      rx="6"
+      fill="#f2c94c"
+    />
+    <text x="20" y="23" class="tag">
+      GIT
+    </text>
+
+    <rect
+      x="82"
+      width="90"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="100" y="23" class="tag">
+      GITHUB
+    </text>
+
+    <rect
+      x="184"
+      width="80"
+      height="36"
+      rx="6"
+      fill="#2d9cdb"
+    />
+    <text x="202" y="23" class="tag">
+      LINUX
+    </text>
+
+    <rect
+      x="276"
+      width="125"
+      height="36"
+      rx="6"
+      fill="#e32636"
+    />
+    <text x="291" y="23" class="tag">
+      ANDROID STUDIO
+    </text>
+
+    <rect
+      x="413"
+      width="80"
+      height="36"
+      rx="6"
+      fill="#212936"
+      stroke="#485260"
+    />
+    <text
+      x="429"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      POSTMAN
+    </text>
+
+    <rect
+      x="505"
+      width="75"
+      height="36"
+      rx="6"
+      fill="#2ea043"
+    />
+    <text x="522" y="23" class="tag">
+      FIGMA
+    </text>
+
+    <rect
+      x="592"
+      width="75"
+      height="36"
+      rx="6"
+      fill="#212936"
+      stroke="#485260"
+    />
+    <text
+      x="608"
+      y="23"
+      class="white"
+      font-family="Arial"
+      font-size="14"
+      font-weight="700"
+    >
+      XAMPP
+    </text>
+
+  </g>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- PROJECTS & EDUCATION -->
+<!-- ========================================================= -->
+
+<line
+  x1="60"
+  y1="1710"
+  x2="1140"
+  y2="1710"
+  stroke="#30363d"
+  stroke-width="4"
+/>
+
+<rect
+  x="60"
+  y="1750"
+  width="16"
+  height="16"
+  fill="#f2c94c"
+/>
+
+<text
+  x="100"
+  y="1767"
+  class="h2"
+>
+  PROJECTS &amp; EDUCATION
+</text>
+
+
+<!-- ========================================================= -->
+<!-- FEATURED PROJECTS -->
+<!-- ========================================================= -->
+
+<g transform="translate(60 1815)">
+
+  <rect
+    width="520"
+    height="710"
+    rx="10"
+    fill="#111827"
+    stroke="#30363d"
+  />
+
+  <text
+    x="25"
+    y="42"
+    class="h3"
+  >
+    FEATURED PROJECTS
+  </text>
+
+  <g transform="translate(25 75)">
+
+    <!-- Ice Cream Simulator -->
+    <circle
+      cx="7"
+      cy="0"
+      r="7"
+      fill="#f2c94c"
+    />
+
+    <text
+      x="25"
+      y="6"
+      class="h3"
+    >
+      Ice Cream Simulator
+    </text>
+
+    <text
+      x="25"
+      y="28"
+      class="small yellow"
+    >
+      .NET MAUI + ARDUINO
+    </text>
+
+    <text
+      x="25"
+      y="52"
+      class="body"
+    >
+      Cross-platform simulator with real-time
+    </text>
+
+    <text
+      x="25"
+      y="75"
+      class="body"
+    >
+      temperature &amp; humidity monitoring.
+    </text>
+
+
+    <!-- Duo-Codeur -->
+    <circle
+      cx="7"
+      cy="105"
+      r="7"
+      fill="#2d9cdb"
+    />
+
+    <text
+      x="25"
+      y="111"
+      class="h3"
+    >
+      Duo-Codeur
+    </text>
+
+    <text
+      x="25"
+      y="133"
+      class="small blue"
+    >
+      REACT NATIVE + EXPO GO
+    </text>
+
+    <text
+      x="25"
+      y="157"
+      class="body"
+    >
+      Gamified coding-learning mobile app
+    </text>
+
+    <text
+      x="25"
+      y="180"
+      class="body"
+    >
+      with external API integration.
+    </text>
+
+
+    <!-- Stocks & Commands -->
+    <circle
+      cx="7"
+      cy="210"
+      r="7"
+      fill="#e32636"
+    />
+
+    <text
+      x="25"
+      y="216"
+      class="h3"
+    >
+      Stocks &amp; Commands
+    </text>
+
+    <text
+      x="25"
+      y="238"
+      class="small red"
+    >
+      JAVA + SPRING BOOT
+    </text>
+
+    <text
+      x="25"
+      y="262"
+      class="body"
+    >
+      Inventory and order management backend
+    </text>
+
+    <text
+      x="25"
+      y="285"
+      class="body"
+    >
+      with REST APIs and Maven.
+    </text>
+
+
+    <!-- Biblioplane -->
+    <circle
+      cx="7"
+      cy="315"
+      r="7"
+      fill="#2ea043"
+    />
+
+    <text
+      x="25"
+      y="321"
+      class="h3"
+    >
+      Biblioplane
+    </text>
+
+    <text
+      x="25"
+      y="343"
+      class="small green"
+    >
+      ANDROID + FIREBASE
+    </text>
+
+    <text
+      x="25"
+      y="367"
+      class="body"
+    >
+      Campus library locator with maps, books
+    </text>
+
+    <text
+      x="25"
+      y="390"
+      class="body"
+    >
+      and user ratings.
+    </text>
+
+
+    <!-- Collaborative Canvas -->
+    <circle
+      cx="7"
+      cy="420"
+      r="7"
+      fill="#7c5cff"
+    />
+
+    <text
+      x="25"
+      y="426"
+      class="h3"
+    >
+      Collaborative Canvas
+    </text>
+
+    <text
+      x="25"
+      y="448"
+      class="small"
+      fill="#7c5cff"
+    >
+      DJANGO + JAVASCRIPT
+    </text>
+
+    <text
+      x="25"
+      y="472"
+      class="body"
+    >
+      Collaborative canvas web application
+    </text>
+
+    <text
+      x="25"
+      y="495"
+      class="body"
+    >
+      with multi-user interaction.
+    </text>
+
+
+    <!-- Invoice System -->
+    <circle
+      cx="7"
+      cy="525"
+      r="7"
+      fill="#e32636"
+    />
+
+    <text
+      x="25"
+      y="531"
+      class="h3"
+    >
+      Invoice System
+    </text>
+
+    <text
+      x="25"
+      y="553"
+      class="small red"
+    >
+      C# + .NET FRAMEWORK
+    </text>
+
+    <text
+      x="25"
+      y="577"
+      class="body"
+    >
+      Client, article and billing management
+    </text>
+
+    <text
+      x="25"
+      y="600"
+      class="body"
+    >
+      with automated calculations.
+    </text>
+
+
+    <!-- Sentier des Planètes -->
+    <circle
+      cx="7"
+      cy="630"
+      r="7"
+      fill="#2d9cdb"
+    />
+
+    <text
+      x="25"
+      y="636"
+      class="h3"
+    >
+      Sentier des Planètes
+    </text>
+
+    <text
+      x="25"
+      y="658"
+      class="small blue"
+    >
+      AR + MOBILE DEVELOPMENT
+    </text>
+
+  </g>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- ACADEMIC & PROFESSIONAL -->
+<!-- ========================================================= -->
+
+<g transform="translate(620 1815)">
+
+  <rect
+    width="520"
+    height="710"
+    rx="10"
+    fill="#111827"
+    stroke="#30363d"
+  />
+
+  <text
+    x="25"
+    y="42"
+    class="h3"
+  >
+    ACADEMIC &amp; PROFESSIONAL
+  </text>
+
+  <g transform="translate(25 75)">
+
+
+    <!-- Currently Seeking -->
+    <circle
+      cx="7"
+      cy="0"
+      r="7"
+      fill="#2ea043"
+    />
+
+    <text
+      x="25"
+      y="6"
+      class="h3"
+    >
+      Currently Seeking
+    </text>
+
+    <text
+      x="25"
+      y="28"
+      class="small green"
+    >
+      MASTER'S + WORK
+    </text>
+
+    <text
+      x="25"
+      y="52"
+      class="body"
+    >
+      Looking to combine advanced studies with
+    </text>
+
+    <text
+      x="25"
+      y="75"
+      class="body"
+    >
+      hands-on professional experience.
+    </text>
+
+
+    <!-- Bachelor -->
+    <circle
+      cx="7"
+      cy="125"
+      r="7"
+      fill="#f2c94c"
+    />
+
+    <text
+      x="25"
+      y="131"
+      class="h3"
+    >
+      Bachelor of Science in Information Technology
+    </text>
+
+    <text
+      x="25"
+      y="153"
+      class="small yellow"
+    >
+      HELB ILYA PRIGOGINE · GRADUATED 2026
+    </text>
+
+    <text
+      x="25"
+      y="177"
+      class="body"
+    >
+      Software architecture, data structures
+    </text>
+
+    <text
+      x="25"
+      y="200"
+      class="body"
+    >
+      and security fundamentals.
+    </text>
+
+
+    <!-- Internship -->
+    <circle
+      cx="7"
+      cy="250"
+      r="7"
+      fill="#e32636"
+    />
+
+    <text
+      x="25"
+      y="256"
+      class="h3"
+    >
+      Internship @ MyGridEnergy
+    </text>
+
+    <text
+      x="25"
+      y="278"
+      class="small red"
+    >
+      2026
+    </text>
+
+    <text
+      x="25"
+      y="302"
+      class="body"
+    >
+      Hands-on software development in a
+    </text>
+
+    <text
+      x="25"
+      y="325"
+      class="body"
+    >
+      professional engineering environment.
+    </text>
+
+
+    <!-- Upper Secondary -->
+    <circle
+      cx="7"
+      cy="375"
+      r="7"
+      fill="#2d9cdb"
+    />
+
+    <text
+      x="25"
+      y="381"
+      class="h3"
+    >
+      Upper Secondary Education
+    </text>
+
+    <text
+      x="25"
+      y="403"
+      class="small blue"
+    >
+      ECONOMICS &amp; SOCIOLOGY · 2022
+    </text>
+
+    <text
+      x="25"
+      y="427"
+      class="body"
+    >
+      Analytical thinking and problem-solving
+    </text>
+
+    <text
+      x="25"
+      y="450"
+      class="body"
+    >
+      foundation.
+    </text>
+
+  </g>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- ICT KNOWLEDGE BASE / PROJECT MANAGEMENT -->
+<!-- ========================================================= -->
+
+<!-- Small project-management marker below project list -->
+<g transform="translate(85 2460)">
+
+  <rect
+    x="0"
+    y="0"
+    width="470"
+    height="45"
+    rx="6"
+    fill="#0d1117"
+    stroke="#2ea043"
+  />
+
+  <circle
+    cx="18"
+    cy="22"
+    r="6"
+    fill="#2ea043"
+  />
+
+  <text
+    x="35"
+    y="20"
+    class="small green"
+  >
+    ICT KNOWLEDGE BASE
+  </text>
+
+  <text
+    x="35"
+    y="37"
+    font-family="Arial"
+    font-size="12"
+    fill="#8b949e"
+  >
+    SCRUM MASTER · AGILE · TEAM COORDINATION
+  </text>
+
+</g>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<rect
+  x="60"
+  y="2570"
+  width="1080"
+  height="170"
+  rx="10"
+  fill="#161b22"
+  stroke="#30363d"
+/>
+
+<rect
+  x="60"
+  y="2570"
+  width="8"
+  height="170"
+  fill="url(#hero)"
+/>
+
+
+<g transform="translate(95 2605)">
+
+  <text
+    x="0"
+    y="0"
+    class="mono"
+  >
+    SYS_COMM: johnayazbeck@hotmail.com
+  </text>
+
+  <text
+    x="0"
+    y="32"
+    class="mono"
+  >
+    NETWORK: linkedin.com/in/yazbeckjohn
+  </text>
+
+  <text
+    x="0"
+    y="64"
+    class="mono"
+  >
+    LOCATION: BRUSSELS, BELGIUM
+  </text>
+
+  <text
+    x="0"
+    y="96"
+    class="mono"
+  >
+    VIDEO: youtube.com/@JohnCoding
+  </text>
+
+  <text
+    x="0"
+    y="128"
+    class="small"
+  >
+    STATUS: AVAILABLE FOR THE NEXT CHALLENGE
+  </text>
+
+</g>
+
+
+<!-- Footer quote -->
+<text
+  x="1100"
+  y="2635"
+  text-anchor="end"
+  font-family="Arial"
+  font-size="18"
+  font-style="italic"
+  fill="#8b949e"
+>
+  “Building systems that scale,
+</text>
+
+<text
+  x="1100"
+  y="2663"
+  text-anchor="end"
+  font-family="Arial"
+  font-size="18"
+  font-style="italic"
+  fill="#8b949e"
+>
+  breaking challenges that don't,
+</text>
+
+<text
+  x="1100"
+  y="2691"
+  text-anchor="end"
+  font-family="Arial"
+  font-size="18"
+  font-style="italic"
+  fill="#8b949e"
+>
+  and always pushing the limits.”
+</text>
+
+
+<!-- ========================================================= -->
+<!-- BOTTOM ACCENT -->
+<!-- ========================================================= -->
+
+<rect
+  x="60"
+  y="2760"
+  width="300"
+  height="6"
+  fill="#e32636"
+/>
+
+<rect
+  x="375"
+  y="2760"
+  width="180"
+  height="6"
+  fill="#f2c94c"
+/>
+
+<rect
+  x="570"
+  y="2760"
+  width="250"
+  height="6"
+  fill="#2d9cdb"
+/>
+
+<rect
+  x="835"
+  y="2760"
+  width="305"
+  height="6"
+  fill="#2ea043"
+/>
+
 </svg>
